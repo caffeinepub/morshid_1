@@ -1,0 +1,148 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-17T23:30:24.914Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 8,
+    "implemented": 6,
+    "items": [
+      {
+        "id": "REQ-15",
+        "summary": "Audit the entire MORSHID frontend and ensure every green UI color used anywhere on the site is exactly hex #25D366 (including backgrounds, text, borders, icons, hover/focus states, and Tailwind/CSS variables), replacing any other green values (including dark/light greens) with #25D366 without changing any other non-green colors.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ForFarmersPage.tsx",
+          "frontend/src/components/SiteHeader.tsx",
+          "frontend/src/components/WhatsAppFloatingButton.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ForFarmersPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Standardize button styling site-wide so all buttons share the same visual style: rounded corners and consistent padding/height across all pages and sections, without editing any files under frontend/src/components/ui (immutable).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/MorshidButton.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ForFarmersPage.tsx",
+          "frontend/src/pages/ContactPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/MorshidButton.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ForFarmersPage.tsx",
+          "frontend/src/pages/ContactPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Standardize card styling site-wide so all cards have shadows and consistent borders (same border width/color and shadow intensity), across all pages, without editing any files under frontend/src/components/ui (immutable).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/MorshidCard.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ForFarmersPage.tsx",
+          "frontend/src/pages/ContactPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/MorshidCard.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ForFarmersPage.tsx",
+          "frontend/src/pages/ContactPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-18",
+        "summary": "Verify the header remains sticky on every route and during scrolling, and fix any cases where it is not sticky (including z-index/overlap issues), without changing header content or navigation structure.",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/src/components/SiteHeader.tsx",
+          "frontend/src/layouts/SiteLayout.tsx"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-19",
+        "summary": "Verify the floating WhatsApp button is visible on all pages and remains fixed while scrolling; fix any route/layout issues that could prevent it from rendering.",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/src/layouts/SiteLayout.tsx",
+          "frontend/src/components/WhatsAppFloatingButton.tsx"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-20",
+        "summary": "Ensure all images used across the site are high-quality and clearly depict Moroccan farmers; if any existing generated hero images do not meet this standard, update/replace them while keeping the same file paths referenced in code.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/morshid-hero-farmer-family.dim_1920x1080.png",
+          "frontend/public/assets/generated/morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/morshid-hero-farmer-family.dim_1920x1080.png",
+          "frontend/public/assets/generated/morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png"
+        ]
+      },
+      {
+        "id": "REQ-21",
+        "summary": "Validate that all links across the site work correctly and point to the intended destinations (navigation links, WhatsApp links, mailto link, external app link, and any footer attribution link), and fix any incorrect/broken links without changing displayed text.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/SiteHeader.tsx",
+          "frontend/src/components/SiteFooter.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ForFarmersPage.tsx",
+          "frontend/src/pages/ContactPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ForFarmersPage.tsx",
+          "frontend/src/pages/ContactPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-22",
+        "summary": "Verify the two YouTube videos on the Home page display properly (correct embed URLs, responsive sizing, and not blocked by incorrect iframe attributes) and fix any embed issues while keeping the same video IDs.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png",
+    "frontend/public/assets/generated/morshid-hero-farmer-family.dim_1920x1080.png",
+    "frontend/src/components/MorshidButton.tsx",
+    "frontend/src/components/MorshidCard.tsx",
+    "frontend/src/index.css",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/ForFarmersPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

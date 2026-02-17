@@ -1,0 +1,122 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-audit-the-entire-morshid-frontend-and-ensure-every-green-ui-color-used-anywhere-on-the-site-is-exactly-hex-25d366-including-backgrounds-text-borders-icons-hover-focus-states-and-tailwind-css-variables-replacing-any-other-green-values-including-dark-light-greens-with-25d366-without-changing-any-other-non-green-colors",
+      "featureTitle": "Audit the entire MORSHID frontend and ensure every green UI color used anywhere on the site is exactly hex #25D366 (including backgrounds, text, borders, icons, hover/focus states, and Tailwind/CSS variables), replacing any other green values (including dark/light greens) with #25D366 without changing any other non-green colors.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/pages/ForFarmersPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-standardize-button-styling-site-wide-so-all-buttons-share-the-same-visual-style-rounded-corners-and-consistent-padding-height-across-all-pages-and-sections-without-editing-any-files-under-frontend-src-components-ui-immutable",
+      "featureTitle": "Standardize button styling site-wide so all buttons share the same visual style: rounded corners and consistent padding/height across all pages and sections, without editing any files under frontend/src/components/ui (immutable).",
+      "files": [
+        "frontend/src/components/MorshidButton.tsx",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/ForFarmersPage.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-standardize-card-styling-site-wide-so-all-cards-have-shadows-and-consistent-borders-same-border-width-color-and-shadow-intensity-across-all-pages-without-editing-any-files-under-frontend-src-components-ui-immutable",
+      "featureTitle": "Standardize card styling site-wide so all cards have shadows and consistent borders (same border width/color and shadow intensity), across all pages, without editing any files under frontend/src/components/ui (immutable).",
+      "files": [
+        "frontend/src/components/MorshidCard.tsx",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/ForFarmersPage.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-all-images-used-across-the-site-are-high-quality-and-clearly-depict-moroccan-farmers-if-any-existing-generated-hero-images-do-not-meet-this-standard-update-replace-them-while-keeping-the-same-file-paths-referenced-in-code",
+      "featureTitle": "Ensure all images used across the site are high-quality and clearly depict Moroccan farmers; if any existing generated hero images do not meet this standard, update/replace them while keeping the same file paths referenced in code.",
+      "files": [],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-20"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-validate-that-all-links-across-the-site-work-correctly-and-point-to-the-intended-destinations-navigation-links-whatsapp-links-mailto-link-external-app-link-and-any-footer-attribution-link-and-fix-any-incorrect-broken-links-without-changing-displayed-text",
+      "featureTitle": "Validate that all links across the site work correctly and point to the intended destinations (navigation links, WhatsApp links, mailto link, external app link, and any footer attribution link), and fix any incorrect/broken links without changing displayed text.",
+      "files": [
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/ForFarmersPage.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-21"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-verify-the-two-youtube-videos-on-the-home-page-display-properly-correct-embed-urls-responsive-sizing-and-not-blocked-by-incorrect-iframe-attributes-and-fix-any-embed-issues-while-keeping-the-same-video-ids",
+      "featureTitle": "Verify the two YouTube videos on the Home page display properly (correct embed URLs, responsive sizing, and not blocked by incorrect iframe attributes) and fix any embed issues while keeping the same video IDs.",
+      "files": [
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-22"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

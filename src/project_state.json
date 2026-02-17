@@ -1,0 +1,272 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 15,
+  "summary": "Website project for \"MORSHID\" with 3 pages (Home, For Farmers, Contact), defined color palette, shared sticky header/footer, persistent floating WhatsApp button, and now all three pages should be fully built out: Home and For Farmers per specified marketing sections (each with its own hero AI background image + CTAs), and Contact page as a complete contact hub with title/subtitle, three contact cards, and response-time note; do not change anything else.",
+  "architectural_notes": [
+    "Header and footer should be shared across all pages; header must remain sticky during scroll.",
+    "Scope change: Home page should now include full sectioned content as specified; keep other pages/components unchanged unless explicitly requested.",
+    "For Farmers page scope update: add 2 more sections below Services (FAQ accordion on #F5F5F5 + final CTA on #25D366) exactly as specified; do not change other pages/components.",
+    "Scope update: Contact page must be fully built with title/subtitle, 3 contact cards (WhatsApp, Email, Location) and a response-time note below; preserve existing header/footer/floating WhatsApp button and do not change other pages/components.",
+    "Site-wide constraint for QA pass: primary green must be exactly #25D366 everywhere; standardize button styling (rounded corners + consistent padding) and card styling (shadows + consistent borders) without changing layout/content beyond necessary fixes.",
+    "Verify cross-page behaviors: header must be sticky on all pages; floating WhatsApp button must be visible on all pages; all internal/external links must work; YouTube embeds must render properly.",
+    "Asset quality requirement: all marketing/hero images should be high-quality and depict Moroccan farmers; do not otherwise alter page structure/content."
+  ],
+  "known_issues": [
+    "Potential brand-style conflict: For Farmers Services Card 2 requires a blue border (#03A9F4) despite prior guidance to avoid blue/purple in the theme.",
+    "Potential brand-style conflict: Contact Card 2 specifies a blue theme despite prior guidance to avoid blue/purple in the site theme.",
+    "Need to verify and correct any greens not exactly #25D366 across the site.",
+    "Buttons may be inconsistently styled (corner radius/padding) across pages; standardize.",
+    "Cards may lack consistent shadows/borders; standardize.",
+    "Header stickiness may not be applied on all pages; verify and fix.",
+    "Floating WhatsApp button visibility may not be consistent across all pages; verify and fix.",
+    "Some images may not be high quality and/or may not depict Moroccan farmers; verify and replace/fix if needed.",
+    "Some links may be broken/incorrect; verify all links across the site.",
+    "YouTube videos may not display properly; verify embeds and fix if needed."
+  ],
+  "isFixRequest": true,
+  "imageRequirements": "## Edit Images\n- Replace with a high-quality photo-realistic image clearly depicting Moroccan farmers (morshid-hero-farmer-family.dim_1920x1080.png > morshid-hero-farmer-family.dim_1920x1080.png)\n- Replace with a high-quality photo-realistic image clearly depicting Moroccan farmers (morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png > morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-3-page-website-structure-for-morshid-with-routes-pages-home-for-farmers-and-contact-and-ensure-navigation-between-them-works-from-the-header",
+      "title": "Create a 3-page website structure for “MORSHID” with routes/pages: Home, For Farmers, and Contact, and ensure navigation between them works from the header.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-global-site-theme-colors-exactly-as-specified-primary-green-25d366-dark-green-1b5e20-light-gray-f5f5f5-white-background-and-text-333333-and-apply-them-consistently-across-header-footer-and-floating-whatsapp-button",
+      "title": "Implement the global site theme colors exactly as specified: Primary green #25D366, Dark green #1B5E20, Light gray #F5F5F5, White background, and Text #333333, and apply them consistently across header, footer, and floating WhatsApp button.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-sticky-header-always-visible-on-scroll-with-left-aligned-morshid-logo-text-in-dark-green-1b5e20-and-bold-weight-right-side-navigation-links-home-for-farmers-contact-header-background-white-with-a-subtle-light-shadow",
+      "title": "Build a sticky header (always visible on scroll) with: left-aligned “MORSHID” logo text in dark green (#1B5E20) and bold weight; right-side navigation links: Home, For Farmers, Contact; header background white with a subtle light shadow.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-footer-with-dark-green-background-1b5e20-a-white-morshid-logo-text-and-a-single-line-of-text-exactly-rabat-morocco-hello-tmu-ai-212-623-237-732-tmu-sarl",
+      "title": "Build a footer with dark green background (#1B5E20), a white “MORSHID” logo text, and a single line of text exactly: “Rabat, Morocco | hello@tmu.ai | +212 623 237 732 | © TMU SARL”.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-floating-whatsapp-button-that-appears-on-all-pages-anchored-to-the-bottom-right-always-visible-while-scrolling-using-primary-green-25d366-with-a-whatsapp-icon-linking-to-https-wa-me-212623237732",
+      "title": "Add a floating WhatsApp button that appears on all pages, anchored to the bottom-right, always visible while scrolling, using primary green (#25D366) with a WhatsApp icon, linking to https://wa.me/212623237732.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-do-not-add-page-content-yet-each-page-should-render-only-the-shared-layout-header-footer-whatsapp-button-with-an-otherwise-empty-main-content-area-no-marketing-sections-paragraphs-forms-maps-or-placeholder-copy",
+      "title": "Do not add page content yet: each page should render only the shared layout (header/footer/WhatsApp button) with an otherwise empty main content area (no marketing sections, paragraphs, forms, maps, or placeholder copy).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-one-coherent-visual-theme-direction-typography-spacing-and-component-styling-consistent-with-an-agricultural-advisory-brand-using-the-provided-green-palette-and-light-neutrals-avoid-blue-purple",
+      "title": "Apply one coherent visual theme direction (typography, spacing, and component styling) consistent with an agricultural advisory brand, using the provided green palette and light neutrals (avoid blue/purple).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-home-page-content-route-by-replacing-the-current-empty-homepage-component-with-a-complete-scrollable-page-containing-exactly-the-6-sections-specified-by-the-user-1-hero-with-full-width-background-image-white-headline-subtitle-primary-green-whatsapp-cta-button-linking-to-https-wa-me-212623237732-and-the-small-availability-text-2-four-pillars-section-on-light-gray-f5f5f5-with-title-subtitle-and-4-cards-in-a-single-row-on-desktop-responsive-stacking-on-smaller-screens-with-white-backgrounds-shadows-and-the-specified-colored-top-borders-and-icons-3-videos-section-with-title-and-two-large-side-by-side-embedded-youtube-videos-for-https-www-youtube-com-watch-v-19ku6cawxxk-and-https-www-youtube-com-watch-v-dntsf91-uck-4-how-it-works-section-with-title-subtitle-and-3-steps-in-a-row-with-arrows-between-them-each-step-showing-a-numbered-circle-the-specified-lucide-icons-step-title-and-step-description-plus-a-green-whatsapp-cta-button-linking-to-https-wa-me-212623237732-5-trust-section-on-light-green-e8f5e9-containing-a-title-and-3-stat-boxes-with-the-exact-texts-provided-and-b-a-what-farmers-say-title-with-two-testimonial-cards-with-the-exact-quotes-and-attributions-provided-6-final-cta-section-on-dark-green-1b5e20-with-the-specified-white-title-subtitle-text-a-large-white-button-linking-to-https-wa-me-212623237732-a-smaller-outlined-button-linking-to-http-app-morshid-ai-and-the-whatsapp-number-shown-as-212-623-237-732",
+      "title": "Implement the Home page content (route \"/\") by replacing the current empty HomePage component with a complete, scrollable page containing exactly the 6 sections specified by the user: (1) Hero with full-width background image, white headline/subtitle, primary green WhatsApp CTA button linking to https://wa.me/212623237732, and the small availability text; (2) Four Pillars section on light gray #F5F5F5 with title/subtitle and 4 cards in a single row on desktop (responsive stacking on smaller screens) with white backgrounds, shadows, and the specified colored top borders and icons; (3) Videos section with title and two large, side-by-side embedded YouTube videos for https://www.youtube.com/watch?v=19kU6cAwXXk and https://www.youtube.com/watch?v=DnTsf91_UCk; (4) How It Works section with title/subtitle and 3 steps in a row with arrows between them, each step showing a numbered circle, the specified Lucide icons, step title, and step description, plus a green WhatsApp CTA button linking to https://wa.me/212623237732; (5) Trust section on light green #E8F5E9 containing (a) title and 3 stat boxes with the exact texts provided and (b) a \"What Farmers Say\" title with two testimonial cards with the exact quotes and attributions provided; (6) Final CTA section on dark green #1B5E20 with the specified white title/subtitle/text, a large white button linking to https://wa.me/212623237732, a smaller outlined button linking to http://app.morshid.ai, and the WhatsApp number shown as +212 623 237 732.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-generated-hero-background-image-as-a-static-asset-under-frontend-public-assets-generated-and-use-it-as-the-hero-section-background-e-g-via-css-background-image-overlay-ensuring-headline-subtitle-remain-clearly-readable-in-white-over-the-image",
+      "title": "Add the generated Hero background image as a static asset under frontend/public/assets/generated and use it as the Hero section background (e.g., via CSS background-image/overlay) ensuring headline/subtitle remain clearly readable in white over the image.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-placeholder-for-farmers-page-route-for-farmers-with-a-complete-page-containing-exactly-two-sections-1-a-hero-section-with-a-full-width-background-image-white-title-subtitle-text-and-a-green-cta-button-linking-to-whatsapp-and-2-a-services-section-on-a-white-background-with-a-title-and-four-service-cards-in-a-2x2-grid-on-desktop-responsive-for-smaller-screens",
+      "title": "Replace the current placeholder For Farmers page (route \"/for-farmers\") with a complete page containing exactly two sections: (1) a Hero section with a full-width background image, white title/subtitle text, and a green CTA button linking to WhatsApp; and (2) a Services section on a white background with a title and four service cards in a 2x2 grid on desktop (responsive for smaller screens).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-for-farmers-hero-background-image-as-a-static-asset-under-frontend-public-assets-generated-and-use-it-as-the-for-farmers-hero-section-background-image-via-css-background-image-or-equivalent-ensuring-the-hero-title-subtitle-remain-clearly-readable-in-white-over-the-image",
+      "title": "Add the For Farmers Hero background image as a static asset under frontend/public/assets/generated and use it as the For Farmers Hero section background image (via CSS background-image or equivalent), ensuring the Hero title/subtitle remain clearly readable in white over the image.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-for-farmers-page-route-for-farmers-component-frontend-src-pages-forfarmerspage-tsx-by-adding-a-new-section-3-faq-directly-below-the-existing-services-section-without-changing-the-existing-hero-or-services-sections",
+      "title": "Update the For Farmers page (route \"/for-farmers\", component \"frontend/src/pages/ForFarmersPage.tsx\") by adding a new SECTION 3 (FAQ) directly below the existing Services section, without changing the existing Hero or Services sections.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-for-farmers-page-frontend-src-pages-forfarmerspage-tsx-by-adding-a-new-section-4-cta-directly-below-the-new-faq-section-without-changing-any-other-pages-or-shared-components",
+      "title": "Update the For Farmers page (\"frontend/src/pages/ForFarmersPage.tsx\") by adding a new SECTION 4 (CTA) directly below the new FAQ section, without changing any other pages or shared components.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-empty-contact-page-route-contact-file-frontend-src-pages-contactpage-tsx-with-a-complete-page-that-renders-1-a-page-title-contact-us-2-a-subtitle-we-re-here-to-help-3-three-contact-cards-in-a-single-row-on-desktop-responsive-stacking-on-smaller-screens-with-the-exact-card-contents-and-links-specified-and-4-a-line-of-text-below-the-cards-that-reads-exactly-response-time-usually-within-1-hour-on-whatsapp",
+      "title": "Replace the current empty Contact page (route \"/contact\", file \"frontend/src/pages/ContactPage.tsx\") with a complete page that renders: (1) a page title \"Contact Us\"; (2) a subtitle \"We're here to help\"; (3) three contact cards in a single row on desktop (responsive stacking on smaller screens) with the exact card contents and links specified; and (4) a line of text below the cards that reads exactly: \"Response time: Usually within 1 hour on WhatsApp\".",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-the-entire-morshid-frontend-and-ensure-every-green-ui-color-used-anywhere-on-the-site-is-exactly-hex-25d366-including-backgrounds-text-borders-icons-hover-focus-states-and-tailwind-css-variables-replacing-any-other-green-values-including-dark-light-greens-with-25d366-without-changing-any-other-non-green-colors",
+      "title": "Audit the entire MORSHID frontend and ensure every green UI color used anywhere on the site is exactly hex #25D366 (including backgrounds, text, borders, icons, hover/focus states, and Tailwind/CSS variables), replacing any other green values (including dark/light greens) with #25D366 without changing any other non-green colors.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-standardize-button-styling-site-wide-so-all-buttons-share-the-same-visual-style-rounded-corners-and-consistent-padding-height-across-all-pages-and-sections-without-editing-any-files-under-frontend-src-components-ui-immutable",
+      "title": "Standardize button styling site-wide so all buttons share the same visual style: rounded corners and consistent padding/height across all pages and sections, without editing any files under frontend/src/components/ui (immutable).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-standardize-card-styling-site-wide-so-all-cards-have-shadows-and-consistent-borders-same-border-width-color-and-shadow-intensity-across-all-pages-without-editing-any-files-under-frontend-src-components-ui-immutable",
+      "title": "Standardize card styling site-wide so all cards have shadows and consistent borders (same border width/color and shadow intensity), across all pages, without editing any files under frontend/src/components/ui (immutable).",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-all-images-used-across-the-site-are-high-quality-and-clearly-depict-moroccan-farmers-if-any-existing-generated-hero-images-do-not-meet-this-standard-update-replace-them-while-keeping-the-same-file-paths-referenced-in-code",
+      "title": "Ensure all images used across the site are high-quality and clearly depict Moroccan farmers; if any existing generated hero images do not meet this standard, update/replace them while keeping the same file paths referenced in code.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-validate-that-all-links-across-the-site-work-correctly-and-point-to-the-intended-destinations-navigation-links-whatsapp-links-mailto-link-external-app-link-and-any-footer-attribution-link-and-fix-any-incorrect-broken-links-without-changing-displayed-text",
+      "title": "Validate that all links across the site work correctly and point to the intended destinations (navigation links, WhatsApp links, mailto link, external app link, and any footer attribution link), and fix any incorrect/broken links without changing displayed text.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-the-two-youtube-videos-on-the-home-page-display-properly-correct-embed-urls-responsive-sizing-and-not-blocked-by-incorrect-iframe-attributes-and-fix-any-embed-issues-while-keeping-the-same-video-ids",
+      "title": "Verify the two YouTube videos on the Home page display properly (correct embed URLs, responsive sizing, and not blocked by incorrect iframe attributes) and fix any embed issues while keeping the same video IDs.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create MORSHID website structure with pages: Home, For Farmers, Contact (no page content yet)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement global theme colors: Primary #25D366, Dark green #1B5E20, Light gray #F5F5F5, White background, Text #333333",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Build sticky header with MORSHID logo (dark green, bold) and nav links (Home, For Farmers, Contact) on white background with light shadow",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Build footer with dark green background, white MORSHID logo, and contact line: Rabat, Morocco | hello@tmu.ai | +212 623 237 732 | © TMU SARL",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add floating WhatsApp button on all pages (bottom-right, #25D366 with icon) linking to https://wa.me/212623237732; always visible on scroll",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Build out the Home page with the specified 6 sections (Hero w/ AI background image + WhatsApp CTA, Four Pillars cards, embedded YouTube videos, How It Works steps, Trust stats/testimonials, Final CTA including app download link) without changing other pages/components",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Build out the For Farmers page with a Hero section (AI background image + title/subtitle + WhatsApp CTA) and a Services section (4 service cards with specified icons, colored borders, copy, and WhatsApp buttons) without changing anything else",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Extend For Farmers page by adding an FAQ accordion section (gray #F5F5F5) and a final CTA section (green #25D366) below the existing Services section; do not change anything else",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Build the Contact page with title/subtitle, 3 contact cards (WhatsApp #25D366, Email blue w/ mailto, Location gray), and a response-time note below; keep shared layout and do not change anything else",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Site-wide QA/polish pass: enforce exact #25D366 greens, consistent button/card styling, verify sticky header + floating WhatsApp, ensure high-quality Moroccan farmer images, validate all links, and confirm YouTube embeds render correctly (do not change anything else)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Verify the header remains sticky on every route and during scrolling, and fix any cases where it is not sticky (including z-index/overlap issues), without changing header content or navigation structure.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Verify the floating WhatsApp button is visible on all pages and remains fixed while scrolling; fix any route/layout issues that could prevent it from rendering.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "MORSHID",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

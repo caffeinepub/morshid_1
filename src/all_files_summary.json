@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Empty Motoko actor definition.",
+  "feature_evidence.json": "Feature evidence report listing multiple UI and asset-related feature requirements with associated files and metadata.",
+  "frontend-file-summaries.txt": "Plain-text map of frontend file paths to short descriptions of their roles.",
+  "frontend/index.css": "Global Tailwind base styles and theme variables including color, layout, and dark mode values.",
+  "frontend/index.html": "Base HTML document mounting the React app and loading main.tsx.",
+  "frontend/src/App.tsx": "Configures TanStack Router with Home, For Farmers, and Contact routes using SiteLayout.",
+  "frontend/src/components/MorshidButton.tsx": "Button wrapper enforcing rounded corners and consistent styling around shadcn Button.",
+  "frontend/src/components/MorshidCard.tsx": "Card wrapper adding consistent border, shadow, and optional top border color accent.",
+  "frontend/src/components/SiteFooter.tsx": "Footer with MORSHID branding, contact info, and caffeine.ai attribution.",
+  "frontend/src/components/SiteHeader.tsx": "Sticky header with navigation links highlighting active route.",
+  "frontend/src/components/WhatsAppFloatingButton.tsx": "Floating WhatsApp contact button fixed to bottom-right.",
+  "frontend/src/hooks/useActor.ts": "Hook that creates and manages an authenticated or anonymous backend actor and refreshes dependent queries.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Internet Identity authentication context and provider handling login, logout, and identity persistence.",
+  "frontend/src/index.css": "Global brand-focused styles defining MORSHID color tokens and base theme using Tailwind.",
+  "frontend/src/layouts/SiteLayout.tsx": "Page layout with header, footer, routed content outlet, and floating WhatsApp button.",
+  "frontend/src/main.tsx": "Bootstraps the React app with React Query and an Internet Identity provider, rendering the App component into the root element.",
+  "frontend/src/pages/ContactPage.tsx": "Renders the Contact page with three contact method cards (WhatsApp, Email, Location) and a response-time note.",
+  "frontend/src/pages/ForFarmersPage.tsx": "Builds the For Farmers page with a hero section, service cards, and FAQ/CTA sections using icons and WhatsApp links.",
+  "frontend/src/pages/HomePage.tsx": "Defines the Home page with a hero banner, key feature sections, and CTA buttons linking to WhatsApp support.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom colors, typography, container queries, animations, and MORSHID theme extensions.",
+  "project_state.json": "Tracks project requirements, constraints, known issues, and scope updates for the MORSHID website build."
+}
