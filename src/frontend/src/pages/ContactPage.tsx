@@ -19,9 +19,9 @@ export default function ContactPage() {
         {/* Contact Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {/* WhatsApp Card */}
-          <MorshidCard className="hover:shadow-lg transition-shadow">
+          <MorshidCard topBorderColor="#25D366" className="hover:shadow-lg transition-shadow">
             <CardHeader className="text-center">
-              <div className="mx-auto w-16 h-16 rounded-full bg-morshid-primary flex items-center justify-center mb-4">
+              <div className="mx-auto w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center mb-4">
                 <MessageCircle className="w-8 h-8 text-white" />
               </div>
               <CardTitle className="text-2xl">WhatsApp</CardTitle>
@@ -32,7 +32,7 @@ export default function ContactPage() {
               </p>
               <MorshidButton 
                 asChild
-                className="w-full bg-morshid-primary hover:bg-morshid-primary/90 text-white"
+                className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white"
               >
                 <a href="https://wa.me/212623237732" target="_blank" rel="noopener noreferrer">
                   Message Us
@@ -45,7 +45,7 @@ export default function ContactPage() {
           </MorshidCard>
 
           {/* Email Card */}
-          <MorshidCard className="hover:shadow-lg transition-shadow">
+          <MorshidCard topBorderColor="#03A9F4" className="hover:shadow-lg transition-shadow">
             <CardHeader className="text-center">
               <div className="mx-auto w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center mb-4">
                 <Mail className="w-8 h-8 text-white" />
@@ -71,7 +71,7 @@ export default function ContactPage() {
           </MorshidCard>
 
           {/* Location Card */}
-          <MorshidCard className="hover:shadow-lg transition-shadow">
+          <MorshidCard topBorderColor="#795548" className="hover:shadow-lg transition-shadow">
             <CardHeader className="text-center">
               <div className="mx-auto w-16 h-16 rounded-full bg-gray-500 flex items-center justify-center mb-4">
                 <MapPin className="w-8 h-8 text-white" />

@@ -1,14 +1,14 @@
 {
   "frontend/src/App.tsx": "Main application component that sets up TanStack Router with three routes (Home, For Farmers, Contact) using a shared SiteLayout.",
   "frontend/src/layouts/SiteLayout.tsx": "Shared layout component that wraps all pages with sticky header, footer, and floating WhatsApp button around the main content outlet.",
-  "frontend/src/components/SiteHeader.tsx": "Sticky header component with MORSHID logo and navigation links using exact #25D366 green for active/hover states.",
+  "frontend/src/components/SiteHeader.tsx": "Sticky header component with MORSHID logo and navigation links; active route highlighted in exact #25D366 green, hover shows underline effect with offset.",
   "frontend/src/components/SiteFooter.tsx": "Footer component with dark green background displaying MORSHID branding, contact information, and Caffeine attribution.",
-  "frontend/src/components/WhatsAppFloatingButton.tsx": "Fixed-position floating button in bottom-right corner linking to WhatsApp with exact #25D366 green background.",
-  "frontend/src/pages/HomePage.tsx": "Complete home page with hero, four pillars cards, YouTube videos, how-it-works steps, testimonials, and CTA sections using standardized MorshidButton and MorshidCard components with exact #25D366 green.",
-  "frontend/src/pages/ForFarmersPage.tsx": "Complete For Farmers page with hero, services grid, FAQ accordion, and CTA using standardized components with exact #25D366 green and consistent styling.",
-  "frontend/src/pages/ContactPage.tsx": "Complete Contact page with three contact cards using standardized MorshidCard and MorshidButton components with consistent shadows, borders, and exact #25D366 green for WhatsApp elements.",
-  "frontend/src/index.css": "Global styles with MORSHID brand colors defined using exact #25D366 green in OKLCH format and base typography.",
+  "frontend/src/components/WhatsAppFloatingButton.tsx": "Fixed-position floating button in bottom-right corner linking to WhatsApp with exact #25D366 green background and hover shadow effect.",
+  "frontend/src/pages/HomePage.tsx": "Complete home page with hero, four pillars cards, YouTube videos, how-it-works steps, testimonials, and CTA sections; section backgrounds alternate between white, #F5F5F5, and #E8F5E9 with all green colors using exact #25D366.",
+  "frontend/src/pages/ForFarmersPage.tsx": "Complete For Farmers page with hero, services grid, FAQ accordion, and CTA; section backgrounds alternate between white, #F5F5F5, and #E8F5E9 with all green colors using exact #25D366.",
+  "frontend/src/pages/ContactPage.tsx": "Complete Contact page with three contact cards (WhatsApp, Email, Location) using standardized MorshidCard with colored top borders and consistent styling; all green colors using exact #25D366.",
+  "frontend/src/index.css": "Global styles with MORSHID brand colors and global button styling rules for consistent rounded corners and hover shadow effects across non-UI components.",
   "frontend/tailwind.config.js": "Tailwind configuration with MORSHID brand color tokens mapped to exact hex values including #25D366 for all green colors.",
-  "frontend/src/components/MorshidButton.tsx": "Wrapper component around shadcn Button that enforces consistent rounded corners (rounded-lg) and padding across the site.",
-  "frontend/src/components/MorshidCard.tsx": "Wrapper component around shadcn Card that enforces consistent border and shadow-md styling with optional top border color accent."
+  "frontend/src/components/MorshidButton.tsx": "Wrapper component around shadcn Button that enforces consistent rounded corners (rounded-lg) and hover shadow effect (shadow-lg) across the site.",
+  "frontend/src/components/MorshidCard.tsx": "Wrapper component around shadcn Card that enforces white background, light shadow (shadow-md), rounded corners (rounded-lg), and optional colored top border accent."
 }

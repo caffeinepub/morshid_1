@@ -21,8 +21,8 @@ export default function SiteHeader() {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-morshid-primary ${
-                currentPath === link.path ? 'text-morshid-primary' : 'text-morshid-text'
+              className={`text-lg font-bold transition-colors hover:text-[#25D366] hover:underline hover:underline-offset-4 ${
+                currentPath === link.path ? 'text-[#25D366]' : 'text-morshid-text'
               }`}
             >
               {link.label}

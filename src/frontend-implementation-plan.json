@@ -1,218 +1,94 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "MORSHID frontend QA polish: unify greens, standardize buttons/cards, verify sticky header/WhatsApp, links, images, and YouTube embeds",
+  "title": "MORSHID styling polish: nav active/hover, consistent buttons, standardized cards, alternating section backgrounds",
   "requirements": [
     {
-      "id": "REQ-15",
-      "summary": "Unify every green UI color site-wide to exactly hex #25D366 (including tokens, hover/focus, borders, icons) without changing any non-green colors.",
+      "id": "REQ-26",
+      "summary": "Polish header nav links: active route highlighted in #25D366 and underline on hover without changing structure/labels/paths.",
       "acceptanceCriteria": [
-        "No UI element uses any green color other than #25D366 (verified by inspecting computed styles for representative elements across Home, For Farmers, and Contact).",
-        "Existing non-green colors (e.g., grays, whites, blacks, and any non-green accent colors) are not changed as part of this task."
+        "On each route (/ , /for-farmers , /contact), exactly one corresponding nav link is visually highlighted using #25D366.",
+        "Hovering any nav link shows a visible underline effect (in addition to any existing hover color), and the underline effect works on desktop browsers.",
+        "No changes are made to navigation labels (Home, For Farmers, Contact) or their target paths."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Replace any green-tinted theme variables with literal #25D366 (e.g., brand tokens and any other green OKLCH-based tokens used for primary/ring/charts/sidebar) so all green-derived Tailwind colors resolve to exactly #25D366; ensure no non-green tokens are changed."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Audit and adjust any Tailwind color mappings that could emit non-#25D366 greens via theme variables (including ring/primary/morshid-* color entries) so anything that renders green resolves to #25D366; preserve all non-green color mappings."
-        },
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Replace any remaining inline green values that are not exactly #25D366 (e.g., green section backgrounds or dark-green CTA background) with #25D366; ensure non-green inline colors remain unchanged."
-        },
-        {
-          "path": "frontend/src/pages/ForFarmersPage.tsx",
-          "operation": "modify",
-          "description": "Replace any non-#25D366 green styling (including hover/background shades like #1fb855 or any green-tinted derived backgrounds) with #25D366 while leaving non-green accent colors unchanged."
-        },
-        {
           "path": "frontend/src/components/SiteHeader.tsx",
           "operation": "modify",
-          "description": "Ensure any header text/icon/border/hover color that renders green (e.g., brand text token usage) resolves to exactly #25D366 via the updated theme tokens, without changing header content or nav structure."
-        },
-        {
-          "path": "frontend/src/components/WhatsAppFloatingButton.tsx",
-          "operation": "modify",
-          "description": "Verify the floating WhatsApp button’s background/hover/active/focus styles render green as exactly #25D366 (via tokens or explicit values) and remove any non-#25D366 green shades if present."
+          "description": "Update nav Link class styling to (1) render active link text color using exactly #25D366 and (2) add an underline-on-hover effect (e.g., underline + offset) while preserving existing structure, labels, and destinations. Verify the component's usage instructions before implementing."
         }
       ]
     },
     {
-      "id": "REQ-16",
-      "summary": "Standardize site-wide button styling (rounded corners + consistent padding/height) without editing anything under frontend/src/components/ui.",
+      "id": "REQ-27",
+      "summary": "Make button styling consistent site-wide: rounded corners + shadow on hover for all buttons/links-as-buttons, without modifying frontend/src/components/ui.",
       "acceptanceCriteria": [
-        "All buttons across Home, For Farmers, and Contact have the same corner radius and consistent padding/height when rendered at the same size variant.",
-        "No changes are made to any files under frontend/src/components/ui; consistency is achieved via composition/wrappers and/or consistent usage classes."
+        "All buttons across Home, For Farmers, Contact, and the floating WhatsApp button have rounded corners (where applicable) and show a shadow effect on hover.",
+        "No files under frontend/src/components/ui are modified.",
+        "Button text, destinations (href/to), and existing layout/spacing are preserved."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/MorshidButton.tsx",
-          "operation": "create",
-          "description": "Create a thin wrapper around the shadcn-ui Button to enforce a single site-wide baseline (consistent border radius + consistent height/padding per size) while preserving existing variants via props. Verify the component's usage instructions before implementing."
+          "operation": "modify",
+          "description": "Enhance the shadcn-ui-based MorshidButton wrapper to enforce a consistent hover shadow (and keep rounded corners) across all button usages, including asChild links. Verify the component's usage instructions before implementing."
         },
         {
-          "path": "frontend/src/pages/HomePage.tsx",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Replace direct shadcn-ui Button usage with MorshidButton for all CTAs, removing ad-hoc padding/height/radius overrides so all buttons render consistently; keep all text, destinations, and layout structure unchanged. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/ForFarmersPage.tsx",
-          "operation": "modify",
-          "description": "Replace direct shadcn-ui Button usage with MorshidButton and normalize classes/styles so all buttons share the same radius and consistent padding/height; preserve existing copy, destinations, and non-button layout. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/ContactPage.tsx",
-          "operation": "modify",
-          "description": "Replace direct shadcn-ui Button usage with MorshidButton for WhatsApp/Email CTAs and remove per-button styling inconsistencies (while preserving non-green colors like blue). Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-17",
-      "summary": "Standardize site-wide card styling (consistent border + visible shadow) without editing anything under frontend/src/components/ui.",
-      "acceptanceCriteria": [
-        "All Card instances across the site show a visible shadow and consistent border styling.",
-        "Card styling is consistent between Home, For Farmers, and Contact (e.g., same border thickness and baseline shadow), while preserving existing layout and content."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/MorshidCard.tsx",
-          "operation": "create",
-          "description": "Create wrapper components around shadcn-ui Card (and commonly used subcomponents as needed) to enforce consistent border width/color and baseline shadow intensity across the site while allowing per-card accents (e.g., top border color). Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Update all Card usages to MorshidCard (and wrappers where applicable) to ensure consistent border/shadow styling while preserving existing spacing, grid layout, and content. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/ForFarmersPage.tsx",
-          "operation": "modify",
-          "description": "Update service cards and FAQ accordion item card-like containers to use consistent card border/shadow baseline (via MorshidCard or shared classes) without changing content/layout. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/ContactPage.tsx",
-          "operation": "modify",
-          "description": "Update contact cards to use the standardized card border/shadow styling so all three cards match the site baseline while keeping existing content and non-card styling intact. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-18",
-      "summary": "Ensure the header remains sticky on every route while scrolling, including correct stacking context, without changing header content/navigation structure.",
-      "acceptanceCriteria": [
-        "On Home (/), For Farmers (/for-farmers), and Contact (/contact), the header stays fixed at the top while scrolling.",
-        "Header does not get covered by page content (correct stacking context)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/SiteHeader.tsx",
-          "operation": "modify",
-          "description": "Confirm sticky positioning works across routes and adjust only positioning/stacking classes if needed (e.g., ensure sticky/top-0 and a sufficiently high z-index), without changing header text or navigation structure."
-        },
-        {
-          "path": "frontend/src/layouts/SiteLayout.tsx",
-          "operation": "modify",
-          "description": "Verify layout containers do not disable sticky behavior (e.g., avoid problematic overflow on parent containers) and ensure the main content doesn’t overlap the header during scroll; keep layout structure the same."
-        }
-      ]
-    },
-    {
-      "id": "REQ-19",
-      "summary": "Verify the floating WhatsApp button renders on all pages and remains fixed while scrolling; fix any layout/stacking issues without changing behavior or link.",
-      "acceptanceCriteria": [
-        "Floating WhatsApp button renders on Home, For Farmers, and Contact and remains visible while scrolling.",
-        "The button link remains exactly https://wa.me/212623237732 and opens in a new tab."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/layouts/SiteLayout.tsx",
-          "operation": "modify",
-          "description": "Confirm WhatsAppFloatingButton is mounted within the shared layout for all routes and adjust placement only if needed to prevent any route-specific rendering issues; preserve existing structure."
+          "description": "Add global button styling rules (outside frontend/src/components/ui) to ensure non-MorshidButton buttons (e.g., any native <button> rendered by other components) also get rounded corners and a hover shadow, while preserving spacing and existing typography/colors. Verify the component's usage instructions before implementing."
         },
         {
           "path": "frontend/src/components/WhatsAppFloatingButton.tsx",
           "operation": "modify",
-          "description": "Ensure the floating button remains fixed during scrolling and above all content (z-index/stacking), while keeping href exactly https://wa.me/212623237732 and target=_blank behavior unchanged."
+          "description": "Confirm/adjust floating WhatsApp button classes so it conforms to the same hover-shadow behavior and keeps its rounded shape, without changing link destination or layout. Verify the component's usage instructions before implementing."
         }
       ]
     },
     {
-      "id": "REQ-20",
-      "summary": "Replace low-quality hero images with high-quality photo-realistic Moroccan farmer imagery while keeping the same referenced file paths.",
+      "id": "REQ-28",
+      "summary": "Standardize card styling across pages: white background, light shadow, rounded corners, and themed colored top border while preserving existing theme colors.",
       "acceptanceCriteria": [
-        "Hero background images on Home and For Farmers are visually high-resolution (no visible pixelation/compression artifacts at common desktop widths) and clearly show Moroccan farmers in a realistic agricultural context.",
-        "Existing image URLs referenced by the pages continue to resolve (no broken images)."
+        "All card-like UI elements on Home, For Farmers, and Contact render with a white background, light shadow, and rounded corners.",
+        "All cards display a colored top border; cards with an existing theme color retain that theme color for the top border (e.g., blue/orange/brown where already used).",
+        "No user-facing text is changed."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/morshid-hero-farmer-family.dim_1920x1080.png",
+          "path": "frontend/src/components/MorshidCard.tsx",
           "operation": "modify",
-          "description": "Replace the image file contents with a high-quality photo-realistic image clearly depicting Moroccan farmers, keeping the exact same filename and path so existing references continue to work."
-        },
-        {
-          "path": "frontend/public/assets/generated/morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png",
-          "operation": "modify",
-          "description": "Replace the image file contents with a high-quality photo-realistic image clearly depicting Moroccan farmers, keeping the exact same filename and path so existing references continue to work."
-        }
-      ]
-    },
-    {
-      "id": "REQ-21",
-      "summary": "Validate and fix all links across the site so they route/open correctly without changing displayed text.",
-      "acceptanceCriteria": [
-        "Navigation links route correctly between /, /for-farmers, and /contact.",
-        "All WhatsApp CTAs link to https://wa.me/212623237732.",
-        "Email CTA uses mailto:hello@tmu.ai and works.",
-        "App CTA links to http://app.morshid.ai and opens successfully.",
-        "No anchor element has an invalid href (e.g., empty, '#', or malformed URL) unless required for current behavior."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/SiteHeader.tsx",
-          "operation": "modify",
-          "description": "Verify header navigation links route correctly to /, /for-farmers, and /contact and fix only incorrect paths if any; do not change visible labels or nav structure."
-        },
-        {
-          "path": "frontend/src/components/SiteFooter.tsx",
-          "operation": "modify",
-          "description": "Verify the footer attribution link is valid, uses a correct absolute URL, and opens in a new tab; fix only href/attributes if broken without changing displayed text."
-        },
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Audit all Home CTAs (WhatsApp and app link) to ensure href values match the required destinations and open behavior (new tab where applicable); fix only broken/incorrect hrefs without changing displayed text."
+          "description": "Update the shadcn-ui-based MorshidCard wrapper so the default card appearance is standardized (white background, light shadow, rounded corners) while preserving existing topBorderColor behavior and allowing per-page theme colors (blue/orange/brown/green) to remain intact. Verify the component's usage instructions before implementing."
         },
         {
           "path": "frontend/src/pages/ForFarmersPage.tsx",
           "operation": "modify",
-          "description": "Audit all For Farmers WhatsApp CTAs to ensure they all link to https://wa.me/212623237732 with new-tab behavior; fix any incorrect/malformed hrefs without changing displayed text."
-        },
-        {
-          "path": "frontend/src/pages/ContactPage.tsx",
-          "operation": "modify",
-          "description": "Verify WhatsApp, mailto:hello@tmu.ai, and any other anchors are correct and non-empty; fix only href/target/rel issues without changing displayed text."
+          "description": "Adjust any card-like elements not fully covered by MorshidCard (e.g., FAQ accordion item wrappers) to match the standardized card styling (white bg, light shadow, rounded corners, with a top border where applicable) without changing copy or layout structure. Verify the component's usage instructions before implementing."
         }
       ]
     },
     {
-      "id": "REQ-22",
-      "summary": "Ensure the two Home page YouTube embeds display and play correctly with responsive sizing, preserving the same video IDs.",
+      "id": "REQ-29",
+      "summary": "Alternate major section backgrounds across pages using only white, #F5F5F5, and #E8F5E9 without changing copy/images/links/order.",
       "acceptanceCriteria": [
-        "Both iframes render and play: https://www.youtube.com/watch?v=19kU6cAwXXk and https://www.youtube.com/watch?v=DnTsf91_UCk (via their embed URLs).",
-        "Videos remain responsive (maintain aspect ratio) and are visible on mobile and desktop widths."
+        "Across Home, For Farmers, and Contact pages, adjacent major sections do not all share the same background; backgrounds alternate using only white, #F5F5F5, and #E8F5E9.",
+        "The existing section order, section content, and all links remain unchanged.",
+        "The specified hex values (#F5F5F5 and #E8F5E9) are used exactly where those backgrounds are applied."
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/HomePage.tsx",
           "operation": "modify",
-          "description": "Verify both iframes use correct embed URLs with the same video IDs (19kU6cAwXXk and DnTsf91_UCk), remain responsive via the existing aspect-ratio container, and have non-blocking iframe attributes; adjust iframe attributes/classes only if needed to fix rendering/playback."
+          "description": "Update Home page section container background styling so adjacent major sections alternate between white, #F5F5F5, and #E8F5E9 (using the exact hex values where applied), while preserving section order, all copy, links, and the existing hero image usage. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/ForFarmersPage.tsx",
+          "operation": "modify",
+          "description": "Update For Farmers page section backgrounds to alternate between white, #F5F5F5, and #E8F5E9 (exact hex values where applied), without changing section order, content, or links. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Adjust Contact page background styling to align with the alternating palette (white, #F5F5F5, #E8F5E9) without introducing new sections, changing existing content, or altering non-green theme accents (e.g., the email blue). Verify the component's usage instructions before implementing."
         }
       ]
     }

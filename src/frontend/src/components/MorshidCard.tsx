@@ -10,7 +10,7 @@ const MorshidCard = forwardRef<HTMLDivElement, MorshidCardProps>(
     return (
       <Card
         ref={ref}
-        className={`border shadow-md ${className || ""}`}
+        className={`bg-white border shadow-md rounded-lg ${className || ""}`}
         style={{
           ...(topBorderColor ? { borderTop: `4px solid ${topBorderColor}` } : {}),
           ...style,

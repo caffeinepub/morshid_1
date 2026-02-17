@@ -1,185 +1,95 @@
 {
   "kind": "build_request",
-  "title": "Site-wide QA polish: unify green color, buttons/cards styling, verify header/WhatsApp, links, images, and YouTube embeds",
+  "title": "Site-wide styling polish: buttons, cards, section backgrounds, and nav hover/active",
   "projectName": "MORSHID",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-15",
-      "text": "Audit the entire MORSHID frontend and ensure every green UI color used anywhere on the site is exactly hex #25D366 (including backgrounds, text, borders, icons, hover/focus states, and Tailwind/CSS variables), replacing any other green values (including dark/light greens) with #25D366 without changing any other non-green colors.",
+      "id": "REQ-26",
+      "text": "Update the header navigation link styling so the current route link is highlighted in exactly #25D366 and all navigation links show an underline effect on hover, without changing header structure, labels, or link destinations.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "All green colors must be exactly #25D366",
-          "DO NOT change anything else."
+          "Navigation:\nMake the current page link highlighted in green #25D366.\nAdd underline effect on hover for navigation links."
         ]
       },
       "acceptanceCriteria": [
-        "No UI element uses any green color other than #25D366 (verified by inspecting computed styles for representative elements across Home, For Farmers, and Contact).",
-        "Existing non-green colors (e.g., grays, whites, blacks, and any non-green accent colors) are not changed as part of this task."
+        "On each route (/ , /for-farmers , /contact), exactly one corresponding nav link is visually highlighted using #25D366.",
+        "Hovering any nav link shows a visible underline effect (in addition to any existing hover color), and the underline effect works on desktop browsers.",
+        "No changes are made to navigation labels (Home, For Farmers, Contact) or their target paths."
       ]
     },
     {
-      "id": "REQ-16",
-      "text": "Standardize button styling site-wide so all buttons share the same visual style: rounded corners and consistent padding/height across all pages and sections, without editing any files under frontend/src/components/ui (immutable).",
+      "id": "REQ-27",
+      "text": "Ensure site-wide button styling is consistent and includes rounded corners and a shadow-on-hover effect for every button (including links rendered as buttons), without editing any files under frontend/src/components/ui.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "All buttons same style: rounded corners, consistent padding",
-          "DO NOT change anything else."
+          "Make all buttons have the same style: rounded corners, shadow on hover."
         ]
       },
       "acceptanceCriteria": [
-        "All buttons across Home, For Farmers, and Contact have the same corner radius and consistent padding/height when rendered at the same size variant.",
-        "No changes are made to any files under frontend/src/components/ui; consistency is achieved via composition/wrappers and/or consistent usage classes."
+        "All buttons across Home, For Farmers, Contact, and the floating WhatsApp button have rounded corners (where applicable) and show a shadow effect on hover.",
+        "No files under frontend/src/components/ui are modified.",
+        "Button text, destinations (href/to), and existing layout/spacing are preserved."
       ]
     },
     {
-      "id": "REQ-17",
-      "text": "Standardize card styling site-wide so all cards have shadows and consistent borders (same border width/color and shadow intensity), across all pages, without editing any files under frontend/src/components/ui (immutable).",
+      "id": "REQ-28",
+      "text": "Standardize card styling across the site so all cards have: white background, light shadow, rounded corners, and a colored top border that matches each card’s theme (while keeping existing non-green theme colors like blue/orange/brown where they already exist).",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "All cards have shadows and consistent borders",
-          "DO NOT change anything else."
+          "Cards styling:\nAll cards should have:\n- White background\n- Light shadow\n- Rounded corners\n- Colored top border matching their theme"
         ]
       },
       "acceptanceCriteria": [
-        "All Card instances across the site show a visible shadow and consistent border styling.",
-        "Card styling is consistent between Home, For Farmers, and Contact (e.g., same border thickness and baseline shadow), while preserving existing layout and content."
+        "All card-like UI elements on Home, For Farmers, and Contact render with a white background, light shadow, and rounded corners.",
+        "All cards display a colored top border; cards with an existing theme color retain that theme color for the top border (e.g., blue/orange/brown where already used).",
+        "No user-facing text is changed."
       ]
     },
     {
-      "id": "REQ-18",
-      "text": "Verify the header remains sticky on every route and during scrolling, and fix any cases where it is not sticky (including z-index/overlap issues), without changing header content or navigation structure.",
+      "id": "REQ-29",
+      "text": "Adjust section background styling across all pages so major sections alternate between white, light gray (#F5F5F5), and light green (#E8F5E9) for visual variety, without changing any copy, images, links, or section order.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "Header is sticky on all pages",
-          "DO NOT change anything else."
+          "Section backgrounds:\nAlternate between white, light gray #F5F5F5, and light green #E8F5E9 for visual variety.\n\nDO NOT change anything else."
         ]
       },
       "acceptanceCriteria": [
-        "On Home (/), For Farmers (/for-farmers), and Contact (/contact), the header stays fixed at the top while scrolling.",
-        "Header does not get covered by page content (correct stacking context)."
-      ]
-    },
-    {
-      "id": "REQ-19",
-      "text": "Verify the floating WhatsApp button is visible on all pages and remains fixed while scrolling; fix any route/layout issues that could prevent it from rendering.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "Floating WhatsApp button visible on all pages",
-          "DO NOT change anything else."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Floating WhatsApp button renders on Home, For Farmers, and Contact and remains visible while scrolling.",
-        "The button link remains exactly https://wa.me/212623237732 and opens in a new tab."
-      ]
-    },
-    {
-      "id": "REQ-20",
-      "text": "Ensure all images used across the site are high-quality and clearly depict Moroccan farmers; if any existing generated hero images do not meet this standard, update/replace them while keeping the same file paths referenced in code.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "All images are high quality and show Moroccan farmers",
-          "DO NOT change anything else."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Hero background images on Home and For Farmers are visually high-resolution (no visible pixelation/compression artifacts at common desktop widths) and clearly show Moroccan farmers in a realistic agricultural context.",
-        "Existing image URLs referenced by the pages continue to resolve (no broken images)."
-      ]
-    },
-    {
-      "id": "REQ-21",
-      "text": "Validate that all links across the site work correctly and point to the intended destinations (navigation links, WhatsApp links, mailto link, external app link, and any footer attribution link), and fix any incorrect/broken links without changing displayed text.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "All links work correctly",
-          "DO NOT change anything else."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Navigation links route correctly between /, /for-farmers, and /contact.",
-        "All WhatsApp CTAs link to https://wa.me/212623237732.",
-        "Email CTA uses mailto:hello@tmu.ai and works.",
-        "App CTA links to http://app.morshid.ai and opens successfully.",
-        "No anchor element has an invalid href (e.g., empty, '#', or malformed URL) unless required for current behavior."
-      ]
-    },
-    {
-      "id": "REQ-22",
-      "text": "Verify the two YouTube videos on the Home page display properly (correct embed URLs, responsive sizing, and not blocked by incorrect iframe attributes) and fix any embed issues while keeping the same video IDs.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "YouTube videos display properly",
-          "DO NOT change anything else."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Both iframes render and play: https://www.youtube.com/watch?v=19kU6cAwXXk and https://www.youtube.com/watch?v=DnTsf91_UCk (via their embed URLs).",
-        "Videos remain responsive (maintain aspect ratio) and are visible on mobile and desktop widths."
+        "Across Home, For Farmers, and Contact pages, adjacent major sections do not all share the same background; backgrounds alternate using only white, #F5F5F5, and #E8F5E9.",
+        "The existing section order, section content, and all links remain unchanged.",
+        "The specified hex values (#F5F5F5 and #E8F5E9) are used exactly where those backgrounds are applied."
       ]
     }
   ],
   "constraints": [
-    "Do not change anything else beyond the requested QA fixes (no new sections, no new copy, no layout/content changes unrelated to the items listed).",
-    "Do not edit any immutable frontend paths, including anything under frontend/src/components/ui and the Internet Identity/actor hooks listed as immutable in SYSTEM_CONTEXT.",
-    "Backend (Motoko) must remain unchanged (no new canisters, no new methods)."
+    "Do not change anything other than the styling changes explicitly requested (no content/copy changes, no new sections, no link destination changes).",
+    "Do not edit any files under frontend/src/components/ui (immutable).",
+    "Keep all existing routes and navigation destinations exactly the same.",
+    "Any green used for UI styling must remain exactly #25D366 (WhatsApp green)."
   ],
   "nonGoals": [
-    "Adding new pages or routes.",
-    "Changing marketing copy, section order, or page structure beyond what is required to fix the listed issues.",
-    "Introducing new integrations or backend data storage.",
-    "Rewriting the design system; only unify the specified styling inconsistencies."
+    "Adding new pages, features, or backend functionality.",
+    "Changing brand assets, hero images, or YouTube video IDs/URLs.",
+    "Changing the Contact page’s non-green theme colors (e.g., its existing blue email styling) beyond applying the requested shared card/button styling where applicable."
   ],
   "imageRequirements": {
     "required": [],
-    "edits": [
-      "Replace with a high-quality photo-realistic image clearly depicting Moroccan farmers (morshid-hero-farmer-family.dim_1920x1080.png > morshid-hero-farmer-family.dim_1920x1080.png)",
-      "Replace with a high-quality photo-realistic image clearly depicting Moroccan farmers (morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png > morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png)"
-    ]
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [
-      "Prefers strict site-wide QA/polish changes only, with minimal scope and no unrelated modifications."
-    ],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
+    "edits": []
   }
 }

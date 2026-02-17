@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 15,
+  "projectStateVersion": 19,
   "summary": "Website project for \"MORSHID\" with 3 pages (Home, For Farmers, Contact), defined color palette, shared sticky header/footer, persistent floating WhatsApp button, and now all three pages should be fully built out: Home and For Farmers per specified marketing sections (each with its own hero AI background image + CTAs), and Contact page as a complete contact hub with title/subtitle, three contact cards, and response-time note; do not change anything else.",
   "architectural_notes": [
     "Header and footer should be shared across all pages; header must remain sticky during scroll.",
@@ -9,7 +9,10 @@
     "Scope update: Contact page must be fully built with title/subtitle, 3 contact cards (WhatsApp, Email, Location) and a response-time note below; preserve existing header/footer/floating WhatsApp button and do not change other pages/components.",
     "Site-wide constraint for QA pass: primary green must be exactly #25D366 everywhere; standardize button styling (rounded corners + consistent padding) and card styling (shadows + consistent borders) without changing layout/content beyond necessary fixes.",
     "Verify cross-page behaviors: header must be sticky on all pages; floating WhatsApp button must be visible on all pages; all internal/external links must work; YouTube embeds must render properly.",
-    "Asset quality requirement: all marketing/hero images should be high-quality and depict Moroccan farmers; do not otherwise alter page structure/content."
+    "Asset quality requirement: all marketing/hero images should be high-quality and depict Moroccan farmers; do not otherwise alter page structure/content.",
+    "Home hero: below the \"Get Free Help on WhatsApp\" button, add small white text exactly: \"Available 24/7 • Free • Voice & Text\".",
+    "Header nav links (Home, For Farmers, Contact) must be more visible: larger font size, bold weight, and hover color exactly #25D366; keep header sticky with white background and light shadow.",
+    "Navigation UX: highlight active/current page link in #25D366 and add underline effect on hover for header nav links (no other header changes)."
   ],
   "known_issues": [
     "Potential brand-style conflict: For Farmers Services Card 2 requires a blue border (#03A9F4) despite prior guidance to avoid blue/purple in the theme.",
@@ -24,7 +27,6 @@
     "YouTube videos may not display properly; verify embeds and fix if needed."
   ],
   "isFixRequest": true,
-  "imageRequirements": "## Edit Images\n- Replace with a high-quality photo-realistic image clearly depicting Moroccan farmers (morshid-hero-farmer-family.dim_1920x1080.png > morshid-hero-farmer-family.dim_1920x1080.png)\n- Replace with a high-quality photo-realistic image clearly depicting Moroccan farmers (morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png > morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png)",
   "existing_features": [
     {
       "id": "feature-create-a-3-page-website-structure-for-morshid-with-routes-pages-home-for-farmers-and-contact-and-ensure-navigation-between-them-works-from-the-header",
@@ -185,6 +187,54 @@
         "REQ-22"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-replace-the-home-page-hero-background-image-with-a-new-high-quality-ai-generated-image-matching-the-user-s-description-while-keeping-the-exact-same-asset-filename-and-path-currently-used-by-the-home-hero-section-assets-generated-morshid-hero-farmer-family-dim-1920x1080-png",
+      "title": "Replace the Home page hero background image with a new high-quality AI-generated image matching the user's description, while keeping the exact same asset filename and path currently used by the Home hero section (\"/assets/generated/morshid-hero-farmer-family.dim_1920x1080.png\").",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-header-navigation-link-styling-to-be-more-visible-by-making-the-navigation-links-home-for-farmers-contact-use-a-larger-font-size-and-bold-text-and-apply-a-hover-text-color-effect-of-exactly-25d366-without-changing-the-header-structure-labels-or-destinations",
+      "title": "Update the header navigation link styling to be more visible by making the navigation links (Home, For Farmers, Contact) use a larger font size and bold text, and apply a hover text color effect of exactly #25D366, without changing the header structure, labels, or destinations.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-header-navigation-link-styling-so-the-current-route-link-is-highlighted-in-exactly-25d366-and-all-navigation-links-show-an-underline-effect-on-hover-without-changing-header-structure-labels-or-link-destinations",
+      "title": "Update the header navigation link styling so the current route link is highlighted in exactly #25D366 and all navigation links show an underline effect on hover, without changing header structure, labels, or link destinations.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-site-wide-button-styling-is-consistent-and-includes-rounded-corners-and-a-shadow-on-hover-effect-for-every-button-including-links-rendered-as-buttons-without-editing-any-files-under-frontend-src-components-ui",
+      "title": "Ensure site-wide button styling is consistent and includes rounded corners and a shadow-on-hover effect for every button (including links rendered as buttons), without editing any files under frontend/src/components/ui.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-standardize-card-styling-across-the-site-so-all-cards-have-white-background-light-shadow-rounded-corners-and-a-colored-top-border-that-matches-each-card-s-theme-while-keeping-existing-non-green-theme-colors-like-blue-orange-brown-where-they-already-exist",
+      "title": "Standardize card styling across the site so all cards have: white background, light shadow, rounded corners, and a colored top border that matches each card’s theme (while keeping existing non-green theme colors like blue/orange/brown where they already exist).",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-adjust-section-background-styling-across-all-pages-so-major-sections-alternate-between-white-light-gray-f5f5f5-and-light-green-e8f5e9-for-visual-variety-without-changing-any-copy-images-links-or-section-order",
+      "title": "Adjust section background styling across all pages so major sections alternate between white, light gray (#F5F5F5), and light green (#E8F5E9) for visual variety, without changing any copy, images, links, or section order.",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -262,6 +312,44 @@
       "reqIds": [
         "REQ-19"
       ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Update Home page hero: replace hero background image with new high-quality AI image (Moroccan farmer family in bright green wheat field, Atlas mountains, father holding smartphone w/ WhatsApp) and add small white availability text under the WhatsApp CTA button: \"Available 24/7 • Free • Voice & Text\"; update header nav link styling (larger, bold, green hover #25D366) while keeping header sticky with white background + light shadow; do not change anything else",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "On the Home page hero section, ensure there is small white text directly below the \"Get Free Help on WhatsApp\" button that reads exactly: \"Available 24/7 • Free • Voice & Text\".",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Site-wide: ensure all green UI colors are exactly #25D366 and standardize button styling (rounded corners + hover shadow) without changing anything else",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Site-wide: standardize card styling (white background, light shadow, rounded corners, colored top border matching theme) without changing anything else",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Navigation: highlight the current page link in #25D366 and add an underline-on-hover effect for nav links (keep everything else unchanged)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Section backgrounds: alternate between white, light gray #F5F5F5, and light green #E8F5E9 across the site for visual variety (do not change anything else)",
+      "reqIds": [],
       "status": "pending"
     }
   ],

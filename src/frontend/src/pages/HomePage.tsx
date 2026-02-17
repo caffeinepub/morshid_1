@@ -22,7 +22,7 @@ export default function HomePage() {
           </p>
           <MorshidButton 
             size="lg"
-            className="text-lg px-8 py-6 h-auto mb-4 bg-morshid-primary hover:bg-morshid-primary/90 text-white"
+            className="text-lg px-8 py-6 h-auto mb-4 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
             asChild
           >
             <a 
@@ -40,7 +40,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 2 - FOUR PILLARS */}
-      <section className="py-16 md:py-24 bg-morshid-light-gray">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">How MORSHID Supports You</h2>
@@ -51,7 +51,7 @@ export default function HomePage() {
             {/* Card 1 - Green */}
             <MorshidCard topBorderColor="#25D366">
               <CardContent className="pt-8 pb-6 px-6">
-                <Lightbulb className="w-12 h-12 mb-4 text-morshid-primary" />
+                <Lightbulb className="w-12 h-12 mb-4 text-[#25D366]" />
                 <h3 className="text-xl font-bold mb-3">Smart Farming Advice</h3>
                 <p className="text-gray-600">
                   Instant diagnosis for plant diseases. Personalized crop care plans. Daily tips for your region.
@@ -96,7 +96,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 3 - VIDEOS */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24" style={{ backgroundColor: '#F5F5F5' }}>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">See MORSHID in Action</h2>
           
@@ -124,7 +124,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 4 - HOW IT WORKS */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24" style={{ backgroundColor: '#E8F5E9' }}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">How Easy Is It?</h2>
@@ -134,10 +134,10 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-4 max-w-5xl mx-auto mb-12">
             {/* Step 1 */}
             <div className="flex-1 text-center">
-              <div className="w-20 h-20 rounded-full bg-morshid-primary text-white flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+              <div className="w-20 h-20 rounded-full bg-[#25D366] text-white flex items-center justify-center text-3xl font-bold mx-auto mb-4">
                 1
               </div>
-              <MessageCircle className="w-12 h-12 mx-auto mb-4 text-morshid-primary" />
+              <MessageCircle className="w-12 h-12 mx-auto mb-4 text-[#25D366]" />
               <h3 className="text-xl font-bold mb-2">Send a Message</h3>
               <p className="text-gray-600">
                 Open WhatsApp and send your question — text or voice
@@ -149,10 +149,10 @@ export default function HomePage() {
 
             {/* Step 2 */}
             <div className="flex-1 text-center">
-              <div className="w-20 h-20 rounded-full bg-morshid-primary text-white flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+              <div className="w-20 h-20 rounded-full bg-[#25D366] text-white flex items-center justify-center text-3xl font-bold mx-auto mb-4">
                 2
               </div>
-              <Cpu className="w-12 h-12 mx-auto mb-4 text-morshid-primary" />
+              <Cpu className="w-12 h-12 mx-auto mb-4 text-[#25D366]" />
               <h3 className="text-xl font-bold mb-2">MORSHID Understands</h3>
               <p className="text-gray-600">
                 Our AI finds the best answer for you
@@ -164,10 +164,10 @@ export default function HomePage() {
 
             {/* Step 3 */}
             <div className="flex-1 text-center">
-              <div className="w-20 h-20 rounded-full bg-morshid-primary text-white flex items-center justify-center text-3xl font-bold mx-auto mb-4">
+              <div className="w-20 h-20 rounded-full bg-[#25D366] text-white flex items-center justify-center text-3xl font-bold mx-auto mb-4">
                 3
               </div>
-              <CheckCircle className="w-12 h-12 mx-auto mb-4 text-morshid-primary" />
+              <CheckCircle className="w-12 h-12 mx-auto mb-4 text-[#25D366]" />
               <h3 className="text-xl font-bold mb-2">Get Your Answer</h3>
               <p className="text-gray-600">
                 Receive clear advice ready to use on your farm
@@ -178,7 +178,7 @@ export default function HomePage() {
           <div className="text-center">
             <MorshidButton 
               size="lg"
-              className="text-lg px-8 py-6 h-auto bg-morshid-primary hover:bg-morshid-primary/90 text-white"
+              className="text-lg px-8 py-6 h-auto bg-[#25D366] hover:bg-[#25D366]/90 text-white"
               asChild
             >
               <a 
@@ -194,7 +194,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 5 - TRUST */}
-      <section className="py-16 md:py-24" style={{ backgroundColor: '#E8F5E9' }}>
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Join Moroccan Farmers Like You</h2>
           

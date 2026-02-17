@@ -2,13 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-audit-the-entire-morshid-frontend-and-ensure-every-green-ui-color-used-anywhere-on-the-site-is-exactly-hex-25d366-including-backgrounds-text-borders-icons-hover-focus-states-and-tailwind-css-variables-replacing-any-other-green-values-including-dark-light-greens-with-25d366-without-changing-any-other-non-green-colors",
-      "featureTitle": "Audit the entire MORSHID frontend and ensure every green UI color used anywhere on the site is exactly hex #25D366 (including backgrounds, text, borders, icons, hover/focus states, and Tailwind/CSS variables), replacing any other green values (including dark/light greens) with #25D366 without changing any other non-green colors.",
+      "featureId": "feature-update-the-header-navigation-link-styling-so-the-current-route-link-is-highlighted-in-exactly-25d366-and-all-navigation-links-show-an-underline-effect-on-hover-without-changing-header-structure-labels-or-link-destinations",
+      "featureTitle": "Update the header navigation link styling so the current route link is highlighted in exactly #25D366 and all navigation links show an underline effect on hover, without changing header structure, labels, or link destinations.",
       "files": [
-        "frontend/src/index.css",
-        "frontend/src/pages/ForFarmersPage.tsx",
-        "frontend/src/pages/HomePage.tsx",
-        "frontend/tailwind.config.js"
+        "frontend/src/components/SiteHeader.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -18,18 +15,17 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-15"
+        "REQ-26"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-standardize-button-styling-site-wide-so-all-buttons-share-the-same-visual-style-rounded-corners-and-consistent-padding-height-across-all-pages-and-sections-without-editing-any-files-under-frontend-src-components-ui-immutable",
-      "featureTitle": "Standardize button styling site-wide so all buttons share the same visual style: rounded corners and consistent padding/height across all pages and sections, without editing any files under frontend/src/components/ui (immutable).",
+      "featureId": "feature-ensure-site-wide-button-styling-is-consistent-and-includes-rounded-corners-and-a-shadow-on-hover-effect-for-every-button-including-links-rendered-as-buttons-without-editing-any-files-under-frontend-src-components-ui",
+      "featureTitle": "Ensure site-wide button styling is consistent and includes rounded corners and a shadow-on-hover effect for every button (including links rendered as buttons), without editing any files under frontend/src/components/ui.",
       "files": [
         "frontend/src/components/MorshidButton.tsx",
-        "frontend/src/pages/ContactPage.tsx",
-        "frontend/src/pages/ForFarmersPage.tsx",
-        "frontend/src/pages/HomePage.tsx"
+        "frontend/src/components/WhatsAppFloatingButton.tsx",
+        "frontend/src/index.css"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -39,18 +35,16 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-16"
+        "REQ-27"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-standardize-card-styling-site-wide-so-all-cards-have-shadows-and-consistent-borders-same-border-width-color-and-shadow-intensity-across-all-pages-without-editing-any-files-under-frontend-src-components-ui-immutable",
-      "featureTitle": "Standardize card styling site-wide so all cards have shadows and consistent borders (same border width/color and shadow intensity), across all pages, without editing any files under frontend/src/components/ui (immutable).",
+      "featureId": "feature-standardize-card-styling-across-the-site-so-all-cards-have-white-background-light-shadow-rounded-corners-and-a-colored-top-border-that-matches-each-card-s-theme-while-keeping-existing-non-green-theme-colors-like-blue-orange-brown-where-they-already-exist",
+      "featureTitle": "Standardize card styling across the site so all cards have: white background, light shadow, rounded corners, and a colored top border that matches each card’s theme (while keeping existing non-green theme colors like blue/orange/brown where they already exist).",
       "files": [
         "frontend/src/components/MorshidCard.tsx",
-        "frontend/src/pages/ContactPage.tsx",
-        "frontend/src/pages/ForFarmersPage.tsx",
-        "frontend/src/pages/HomePage.tsx"
+        "frontend/src/pages/ForFarmersPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -60,29 +54,13 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-17"
+        "REQ-28"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-ensure-all-images-used-across-the-site-are-high-quality-and-clearly-depict-moroccan-farmers-if-any-existing-generated-hero-images-do-not-meet-this-standard-update-replace-them-while-keeping-the-same-file-paths-referenced-in-code",
-      "featureTitle": "Ensure all images used across the site are high-quality and clearly depict Moroccan farmers; if any existing generated hero images do not meet this standard, update/replace them while keeping the same file paths referenced in code.",
-      "files": [],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-20"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-validate-that-all-links-across-the-site-work-correctly-and-point-to-the-intended-destinations-navigation-links-whatsapp-links-mailto-link-external-app-link-and-any-footer-attribution-link-and-fix-any-incorrect-broken-links-without-changing-displayed-text",
-      "featureTitle": "Validate that all links across the site work correctly and point to the intended destinations (navigation links, WhatsApp links, mailto link, external app link, and any footer attribution link), and fix any incorrect/broken links without changing displayed text.",
+      "featureId": "feature-adjust-section-background-styling-across-all-pages-so-major-sections-alternate-between-white-light-gray-f5f5f5-and-light-green-e8f5e9-for-visual-variety-without-changing-any-copy-images-links-or-section-order",
+      "featureTitle": "Adjust section background styling across all pages so major sections alternate between white, light gray (#F5F5F5), and light green (#E8F5E9) for visual variety, without changing any copy, images, links, or section order.",
       "files": [
         "frontend/src/pages/ContactPage.tsx",
         "frontend/src/pages/ForFarmersPage.tsx",
@@ -96,25 +74,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-21"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-verify-the-two-youtube-videos-on-the-home-page-display-properly-correct-embed-urls-responsive-sizing-and-not-blocked-by-incorrect-iframe-attributes-and-fix-any-embed-issues-while-keeping-the-same-video-ids",
-      "featureTitle": "Verify the two YouTube videos on the Home page display properly (correct embed URLs, responsive sizing, and not blocked by incorrect iframe attributes) and fix any embed issues while keeping the same video IDs.",
-      "files": [
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-22"
+        "REQ-29"
       ],
       "confidence": "high"
     }

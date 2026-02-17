@@ -94,4 +94,13 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+
+    /* Global button styling for consistent hover shadow */
+    button:not([class*="ui-"]) {
+        @apply rounded-lg transition-shadow;
+    }
+    
+    button:not([class*="ui-"]):hover {
+        @apply shadow-lg;
+    }
 }

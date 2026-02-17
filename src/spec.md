@@ -1,16 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Perform site-wide QA polish for MORSHID by unifying the green color, standardizing button/card styling, and verifying key UI elements (sticky header, WhatsApp button), links, images, and YouTube embeds without changing unrelated content.
+**Goal:** Polish site-wide styling for navigation, buttons, cards, and section backgrounds while keeping all content, structure, and routes unchanged.
 
 **Planned changes:**
-- Audit and replace every green UI color across the site with hex `#25D366` (including hover/focus states, borders, icons, and any CSS/Tailwind variables) while leaving all non-green colors unchanged.
-- Standardize button styling site-wide (rounded corners and consistent padding/height) without editing any files under `frontend/src/components/ui`.
-- Standardize card styling site-wide (consistent borders and visible shadows) without editing any files under `frontend/src/components/ui`.
-- Verify and fix sticky header behavior across all routes, including z-index/overlap issues, without changing header content or navigation structure.
-- Verify and fix the floating WhatsApp button visibility/fixed positioning across all routes; keep link exactly `https://wa.me/212623237732` and open in a new tab.
-- Ensure hero images are high-quality and clearly depict Moroccan farmers, updating/replacing existing generated assets while keeping the same file paths referenced in code.
-- Validate and fix all links across the site (nav routes, WhatsApp CTAs, `mailto:hello@tmu.ai`, `http://app.morshid.ai`, and any footer attribution) without changing displayed text.
-- Verify the two Home page YouTube embeds render/play correctly, use proper embed URLs with the same video IDs, and remain responsive.
+- Update header navigation link styling so the active route link is highlighted in exactly #25D366 and all nav links show an underline on hover (no label/path changes).
+- Standardize button styling site-wide so all buttons (including button-like links and the floating WhatsApp button) have rounded corners and a shadow-on-hover effect, without modifying any files under `frontend/src/components/ui`.
+- Standardize card styling across pages so card-like elements use a white background, light shadow, rounded corners, and a colored top border that matches each card’s existing theme color (including non-green theme colors where already used).
+- Adjust major section backgrounds across Home, For Farmers, and Contact to alternate using only white, #F5F5F5, and #E8F5E9.
 
-**User-visible outcome:** The site has consistent green styling, uniform button/card visuals, a reliably sticky header and WhatsApp button on all pages, working links, high-quality Moroccan farmer hero imagery, and properly functioning responsive YouTube videos on the Home page.
+**User-visible outcome:** Navigation clearly indicates the current page with WhatsApp green and underlines on hover; buttons and cards look consistent across the site; page sections have alternating backgrounds for improved visual variety, with no content or navigation changes.

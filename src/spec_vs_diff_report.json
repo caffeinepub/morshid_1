@@ -1,93 +1,32 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-17T23:30:24.909Z",
-  "summary": "The diff implements wrapper components for standardized Button/Card usage and updates global/Tailwind color tokens, plus modifies the three pages. However, several requirements cannot be verified from the provided diff summary (header stickiness, floating WhatsApp visibility across routes, all-site link audit, and YouTube embed fixes). Additionally, the color-token changes appear to introduce/retain non-#25D366 green values, which conflicts with the strict “only #25D366 for any green UI color” requirement.",
+  "generatedAt": "2026-02-17T23:52:42.066Z",
+  "summary": "REQ-26/27/28 appear implemented via SiteHeader active/hover underline styling, new MorshidButton wrapper + global hover shadow rules, and new MorshidCard wrapper with white background/shadow/rounded corners and per-card colored top borders. REQ-29 (alternating section backgrounds using exactly white/#F5F5F5/#E8F5E9 across all pages) is not directly evidenced in the provided (truncated) page diffs.",
   "missing_requirements": [
     {
-      "id": "REQ-15",
-      "requirement": "Ensure every green UI color used anywhere on the site is exactly hex #25D366 (including variables/tokens), replacing any other green values.",
-      "reason": "The diff defines additional green tokens/values besides #25D366 (e.g., dark green #1B5E20 and OKLCH values labeled as dark/secondary greens), which contradicts the requirement that no UI element uses any green other than #25D366.",
+      "id": "REQ-29",
+      "requirement": "Adjust section background styling across all pages so major sections alternate between white, light gray (#F5F5F5), and light green (#E8F5E9) for visual variety.",
+      "reason": "The visible portions of HomePage/ForFarmersPage show sections using bg-white (and hero uses an image), but the diff excerpts do not show the required alternation pattern nor the explicit use of #F5F5F5 and #E8F5E9. Because the files are truncated, this requirement cannot be confirmed as implemented from the provided evidence.",
       "evidence": [
-        "frontend/tailwind.config.js (defines 'morshid-dark': '#1B5E20')",
-        "frontend/src/index.css (defines --morshid-dark and uses multiple green-like OKLCH values e.g., --chart-2, etc.)"
-      ]
-    },
-    {
-      "id": "REQ-16",
-      "requirement": "Standardize button styling site-wide so all buttons share the same visual style (rounded corners and consistent padding/height across all pages).",
-      "reason": "The wrapper enforces rounded corners (rounded-lg) but consistent padding/height is not centrally enforced; pages show ad-hoc padding/height classes (e.g., px-8 py-6 h-auto) which suggests per-instance differences rather than a site-wide standard.",
-      "evidence": [
-        "frontend/src/components/MorshidButton.tsx (only enforces `rounded-lg`)",
-        "frontend/src/pages/HomePage.tsx (uses `px-8 py-6 h-auto` on a button instance)",
-        "frontend/src/pages/ForFarmersPage.tsx (uses `px-8 py-6 h-auto` on a button instance)"
-      ]
-    },
-    {
-      "id": "REQ-18",
-      "requirement": "Verify the header remains sticky on every route and during scrolling, fixing any cases where it is not sticky (including z-index/overlap issues), without changing header content/navigation.",
-      "reason": "No concrete diff content for the header or layout is provided (only a narrative summary in frontend-file-summaries.txt), so stickiness/z-index fixes cannot be verified from the diff evidence.",
-      "evidence": [
-        "frontend-file-summaries.txt (mentions SiteLayout/SiteHeader behavior but provides no code diff)"
-      ]
-    },
-    {
-      "id": "REQ-19",
-      "requirement": "Verify the floating WhatsApp button is visible on all pages and remains fixed while scrolling; fix any route/layout issues; link must remain https://wa.me/212623237732 and open in new tab.",
-      "reason": "No concrete diff content for WhatsAppFloatingButton or SiteLayout wiring is shown (only a narrative summary), so always-visible rendering and fixed positioning across routes cannot be verified.",
-      "evidence": [
-        "frontend-file-summaries.txt (mentions WhatsAppFloatingButton but provides no code diff)"
-      ]
-    },
-    {
-      "id": "REQ-20",
-      "requirement": "Replace the two specified hero images with high-quality photo-realistic Moroccan farmers while keeping the same file paths referenced in code.",
-      "reason": "The pages reference the specified image paths, but there is no evidence in the diff summary that the actual image assets were replaced (no binary/image file changes shown).",
-      "evidence": [
-        "frontend/src/pages/HomePage.tsx (references /assets/generated/morshid-hero-farmer-family.dim_1920x1080.png)",
-        "frontend/src/pages/ForFarmersPage.tsx (references /assets/generated/morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png)"
-      ]
-    },
-    {
-      "id": "REQ-21",
-      "requirement": "Validate that all links across the site work correctly (nav, WhatsApp, mailto, external app link, footer attribution) and fix broken links without changing displayed text.",
-      "reason": "Only some links are visible in the truncated diffs (WhatsApp and mailto are shown), but there is no diff evidence covering navigation links, the external app CTA (http://app.morshid.ai), or any footer attribution link validation/fixes.",
-      "evidence": [
-        "frontend/src/pages/HomePage.tsx (shows WhatsApp link)",
-        "frontend/src/pages/ContactPage.tsx (shows WhatsApp + mailto links)",
-        "frontend-file-summaries.txt (mentions header/footer links but provides no code diff)"
-      ]
-    },
-    {
-      "id": "REQ-22",
-      "requirement": "Verify/fix the two Home page YouTube embeds (correct embed URLs using same video IDs, responsive sizing, and correct iframe attributes).",
-      "reason": "HomePage is truncated before any iframe/embed code is shown; the diff summary does not provide the actual YouTube iframe changes, so compliance cannot be verified.",
-      "evidence": [
-        "frontend/src/pages/HomePage.tsx (truncated; no iframe/embed code visible)",
-        "frontend-file-summaries.txt (claims YouTube videos exist, but no diff evidence)"
+        "frontend/src/pages/HomePage.tsx (truncated)",
+        "frontend/src/pages/ForFarmersPage.tsx (truncated)",
+        "frontend/src/pages/ContactPage.tsx (truncated)"
       ]
     }
   ],
-  "hallucinated_features": [
-    {
-      "description": "Introduction/retention of additional green color tokens (e.g., dark green #1B5E20 and multiple green-like OKLCH tokens) despite a strict requirement that the only green used anywhere is #25D366.",
-      "reason": "REQ-15 requires replacing any other green values with #25D366, but the diff explicitly defines other green values/tokens.",
-      "evidence": [
-        "frontend/tailwind.config.js (defines 'morshid-dark': '#1B5E20')",
-        "frontend/src/index.css (defines --morshid-dark and multiple OKLCH green-like tokens such as --chart-2)"
-      ]
-    }
-  ],
+  "hallucinated_features": [],
   "confidence": 0.62,
   "changed_files": [
     "frontend-file-summaries.txt",
     "frontend/src/components/MorshidButton.tsx",
     "frontend/src/components/MorshidCard.tsx",
+    "frontend/src/components/SiteHeader.tsx",
+    "frontend/src/components/WhatsAppFloatingButton.tsx",
     "frontend/src/index.css",
     "frontend/src/pages/ContactPage.tsx",
     "frontend/src/pages/ForFarmersPage.tsx",
     "frontend/src/pages/HomePage.tsx",
-    "frontend/tailwind.config.js",
     "project_state.json"
   ]
 }

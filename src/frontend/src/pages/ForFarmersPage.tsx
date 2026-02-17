@@ -74,141 +74,123 @@ export default function ForFarmersPage() {
   return (
     <div className="min-h-screen">
       {/* SECTION 1 - HERO */}
-      <section
-        className="relative flex min-h-[600px] items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url(/assets/generated/morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png)",
-        }}
+      <section 
+        className="relative min-h-[500px] flex items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: 'url(/assets/generated/morshid-for-farmers-hero-hands-whatsapp.dim_1920x1080.png)' }}
       >
-        {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/50" />
-
-        {/* Hero content */}
-        <div className="relative z-10 mx-auto max-w-4xl px-6 py-20 text-center">
-          <h1 className="mb-6 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-            MORSHID Speaks Your Language
+        <div className="relative z-10 container mx-auto px-4 py-20 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Everything You Need to Farm Better
           </h1>
-          <p className="mb-8 text-xl text-white md:text-2xl">
-            Have a question about your crops? Just ask us!
+          <p className="text-lg md:text-xl text-white mb-8 max-w-3xl mx-auto">
+            From crop advice to market prices — all on WhatsApp
           </p>
-          <MorshidButton
-            asChild
+          <MorshidButton 
             size="lg"
-            className="text-lg px-8 py-6 h-auto bg-morshid-primary hover:bg-morshid-primary/90 text-white"
+            className="text-lg px-8 py-6 h-auto bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+            asChild
           >
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Start Chatting
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              Start Now on WhatsApp
             </a>
           </MorshidButton>
         </div>
       </section>
 
       {/* SECTION 2 - SERVICES */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
-            Everything You Need, One Place
-          </h2>
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              What Can MORSHID Do for You?
+            </h2>
+            <p className="text-lg text-gray-600">
+              Real solutions for real farmers
+            </p>
+          </div>
 
-          {/* Service cards grid - 2x2 on desktop, stack on mobile */}
-          <div className="grid gap-8 md:grid-cols-2">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <MorshidCard
-                  key={index}
-                  topBorderColor={service.borderColor}
-                  className="overflow-hidden transition-shadow hover:shadow-xl"
-                >
-                  <CardContent className="p-6">
-                    <div
-                      className="mb-4 inline-flex rounded-full p-3"
-                      style={{ backgroundColor: `${service.borderColor}20` }}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {services.map((service, index) => (
+              <MorshidCard key={index} topBorderColor={service.borderColor}>
+                <CardContent className="pt-8 pb-6 px-6">
+                  <service.icon
+                    className="w-12 h-12 mb-4"
+                    style={{ color: service.borderColor }}
+                  />
+                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <MorshidButton
+                    className="w-full bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+                    asChild
+                  >
+                    <a
+                      href={whatsappLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <Icon
-                        className="h-8 w-8"
-                        style={{ color: service.borderColor }}
-                      />
-                    </div>
-                    <h3 className="mb-3 text-xl font-bold text-gray-900">
-                      {service.title}
-                    </h3>
-                    <p className="mb-6 text-gray-600">
-                      {service.description}
-                    </p>
-                    <MorshidButton
-                      asChild
-                      className="w-full bg-morshid-primary hover:bg-morshid-primary/90 text-white"
-                    >
-                      <a
-                        href={whatsappLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {service.buttonText}
-                      </a>
-                    </MorshidButton>
-                  </CardContent>
-                </MorshidCard>
-              );
-            })}
+                      {service.buttonText}
+                    </a>
+                  </MorshidButton>
+                </CardContent>
+              </MorshidCard>
+            ))}
           </div>
         </div>
       </section>
 
       {/* SECTION 3 - FAQ */}
-      <section className="bg-gray-50 py-16 md:py-24">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="mb-12 text-center text-3xl font-bold text-gray-900 md:text-4xl">
-            Common Questions
-          </h2>
+      <section className="py-16 md:py-24" style={{ backgroundColor: '#F5F5F5' }}>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Common Questions
+            </h2>
+            <p className="text-lg text-gray-600">
+              Everything you need to know
+            </p>
+          </div>
 
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="rounded-lg border bg-white px-6 shadow-md"
-              >
-                <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="bg-white border border-gray-200 rounded-lg shadow-md px-6"
+                >
+                  <AccordionTrigger className="text-lg font-semibold hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </section>
 
-      {/* SECTION 4 - FINAL CTA */}
-      <section className="bg-morshid-primary py-16 text-white md:py-24">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            Start Using MORSHID Today
+      {/* SECTION 4 - CTA */}
+      <section className="py-16 md:py-24" style={{ backgroundColor: '#E8F5E9' }}>
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Get Started?
           </h2>
-          <p className="mb-8 text-xl">
-            Free advice, 24/7 support, in your language
+          <p className="text-xl text-gray-600 mb-8">
+            Send your first message now — it's free!
           </p>
-          <MorshidButton
-            asChild
+          <MorshidButton 
             size="lg"
-            className="text-lg px-8 py-6 h-auto bg-white text-gray-900 hover:bg-gray-100"
+            className="text-lg px-8 py-6 h-auto bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+            asChild
           >
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Message Us on WhatsApp
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              Open WhatsApp
             </a>
           </MorshidButton>
+          <p className="text-gray-600 mt-4">+212 623 237 732</p>
         </div>
       </section>
     </div>
