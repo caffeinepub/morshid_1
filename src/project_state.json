@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 19,
-  "summary": "Website project for \"MORSHID\" with 3 pages (Home, For Farmers, Contact), defined color palette, shared sticky header/footer, persistent floating WhatsApp button, and now all three pages should be fully built out: Home and For Farmers per specified marketing sections (each with its own hero AI background image + CTAs), and Contact page as a complete contact hub with title/subtitle, three contact cards, and response-time note; do not change anything else.",
+  "projectStateVersion": 37,
+  "summary": "Website project for \"MORSHID\" with 3 pages (Home, For Farmers, Contact), defined color palette, shared sticky header/footer, persistent floating WhatsApp button, and now all three pages should be fully built out: Home and For Farmers per specified marketing sections (each with its own hero AI background image + CTAs), and Contact page as a complete contact hub with title/subtitle, three contact cards, and response-time note; additionally, add the uploaded MORSHID logo image only in the header (left side before nav), footer (top of footer), and Home hero (centered above main headline) while keeping \"MORSHID\" text wherever it appears in sentences; all font sizes should be 15-25% larger than original (not 50% larger); do not change anything else.",
   "architectural_notes": [
     "Header and footer should be shared across all pages; header must remain sticky during scroll.",
     "Scope change: Home page should now include full sectioned content as specified; keep other pages/components unchanged unless explicitly requested.",
@@ -26,7 +26,7 @@
     "Some links may be broken/incorrect; verify all links across the site.",
     "YouTube videos may not display properly; verify embeds and fix if needed."
   ],
-  "isFixRequest": true,
+  "isFixRequest": false,
   "existing_features": [
     {
       "id": "feature-create-a-3-page-website-structure-for-morshid-with-routes-pages-home-for-farmers-and-contact-and-ensure-navigation-between-them-works-from-the-header",
@@ -235,6 +235,230 @@
         "REQ-29"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-the-uploaded-logo-image-file-logo-morshid-png-to-the-frontend-as-a-static-asset-under-frontend-public-assets-generated-and-reference-it-from-the-ui-using-a-working-public-url-path-handle-the-space-in-the-filename-correctly",
+      "title": "Add the uploaded logo image file (\"logo MORSHID.png\") to the frontend as a static asset under frontend/public/assets/generated, and reference it from the UI using a working public URL path (handle the space in the filename correctly).",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-header-component-frontend-src-components-siteheader-tsx-to-display-the-uploaded-logo-image-on-the-left-side-before-the-navigation-menu-without-removing-or-altering-any-existing-navigation-links-labels-destinations-or-styling-behavior-active-link-highlight-hover-underline-hover-color-do-not-replace-morshid-in-sentence-text-elsewhere",
+      "title": "Update the header component (frontend/src/components/SiteHeader.tsx) to display the uploaded logo image on the left side before the navigation menu, without removing or altering any existing navigation links, labels, destinations, or styling behavior (active link highlight, hover underline, hover color). Do not replace \"MORSHID\" in sentence text elsewhere.",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-footer-component-frontend-src-components-sitefooter-tsx-to-display-the-uploaded-logo-image-at-the-top-of-the-footer-content-while-keeping-all-existing-footer-text-exactly-as-is-including-rabat-morocco-hello-tmu-ai-212-623-237-732-tmu-sarl-and-the-caffeine-ai-attribution-block",
+      "title": "Update the footer component (frontend/src/components/SiteFooter.tsx) to display the uploaded logo image at the top of the footer content, while keeping all existing footer text exactly as-is (including: \"Rabat, Morocco | hello@tmu.ai | +212 623 237 732 | © TMU SARL\" and the caffeine.ai attribution block).",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-hero-section-frontend-src-pages-homepage-tsx-to-display-the-uploaded-logo-image-centered-above-the-main-hero-headline-without-changing-any-existing-hero-copy-buttons-links-background-image-overlay-or-section-structure",
+      "title": "Update the Home page hero section (frontend/src/pages/HomePage.tsx) to display the uploaded logo image centered above the main hero headline, without changing any existing hero copy, buttons/links, background image, overlay, or section structure.",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-logo-image-rendering-so-the-actual-uploaded-morshid-logo-displays-not-a-black-placeholder-everywhere-it-is-used-header-footer-and-home-hero-without-changing-any-other-ui-copy-styling-layout-links-or-behavior",
+      "title": "Fix the logo image rendering so the actual uploaded MORSHID logo displays (not a black placeholder) everywhere it is used (header, footer, and Home hero), without changing any other UI, copy, styling, layout, links, or behavior.",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-frontend-src-pages-homepage-tsx-see-morshid-in-action-videos-section-to-include-a-third-embedded-youtube-video-for-https-www-youtube-com-watch-v-fagaphpcshi-alongside-the-existing-two-videos-and-adjust-the-layout-so-all-three-videos-render-the-same-size-and-are-visually-aligned",
+      "title": "Update the Home page (frontend/src/pages/HomePage.tsx) \"See MORSHID in Action\" videos section to include a third embedded YouTube video for https://www.youtube.com/watch?v=FAGAphpcsHI alongside the existing two videos, and adjust the layout so all three videos render the same size and are visually aligned.",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-hero-section-frontend-src-pages-homepage-tsx-to-make-the-morshid-logo-image-clickable-triggering-a-popup-card-modal-when-clicked",
+      "title": "Update the Home page hero section (frontend/src/pages/HomePage.tsx) to make the MORSHID logo image clickable, triggering a popup card modal when clicked.",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-popup-card-component-that-displays-with-title-with-morshid-message-text-nothing-to-lose-everything-to-gain-expert-advice-saved-time-better-harvests-higher-profits-and-an-x-close-button-in-the-top-right-corner",
+      "title": "Create a popup card component that displays with title 'With MORSHID', message text 'Nothing to lose, everything to gain. Expert advice, saved time, better harvests, higher profits.', and an X close button in the top-right corner.",
+      "reqIds": [
+        "REQ-37"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-popup-only-appears-when-clicking-the-morshid-logo-in-the-home-page-hero-section-and-does-not-appear-when-clicking-the-logo-in-the-header-or-footer",
+      "title": "Ensure the popup only appears when clicking the MORSHID logo in the Home page hero section, and does not appear when clicking the logo in the header or footer.",
+      "reqIds": [
+        "REQ-38"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-home-page-hero-background-image-frontend-src-pages-homepage-tsx-with-a-new-ai-generated-high-quality-image-while-keeping-the-exact-same-asset-filename-and-path-assets-generated-morshid-hero-farmer-family-dim-1920x1080-png-do-not-change-any-other-hero-section-elements-logo-headline-subtitle-cta-button-availability-text-overlay-or-layout",
+      "title": "Replace the Home page hero background image (frontend/src/pages/HomePage.tsx) with a new AI-generated high-quality image while keeping the exact same asset filename and path '/assets/generated/morshid-hero-farmer-family.dim_1920x1080.png'; do not change any other hero section elements (logo, headline, subtitle, CTA button, availability text, overlay, or layout).",
+      "reqIds": [
+        "REQ-39"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-all-base-font-sizes-by-50-in-frontend-src-index-css-by-modifying-the-root-font-size-or-by-updating-all-text-size-utility-classes-used-throughout-the-application-headings-body-text-paragraphs-lists-labels",
+      "title": "Increase all base font sizes by 50% in frontend/src/index.css by modifying the root font-size or by updating all text size utility classes used throughout the application (headings, body text, paragraphs, lists, labels).",
+      "reqIds": [
+        "REQ-41"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-font-sizes-by-50-in-the-siteheader-component-frontend-src-components-siteheader-tsx-for-all-navigation-links-home-for-farmers-contact-without-changing-the-header-structure-layout-logo-colors-hover-effects-or-active-link-highlighting",
+      "title": "Increase font sizes by 50% in the SiteHeader component (frontend/src/components/SiteHeader.tsx) for all navigation links (Home, For Farmers, Contact) without changing the header structure, layout, logo, colors, hover effects, or active link highlighting.",
+      "reqIds": [
+        "REQ-42"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-font-sizes-by-50-for-all-button-text-across-the-site-including-morshidbutton-component-frontend-src-components-morshidbutton-tsx-whatsappfloatingbutton-frontend-src-components-whatsappfloatingbutton-tsx-and-any-inline-button-implementations-in-pages-homepage-forfarmerspage-contactpage-without-changing-button-styling-colors-rounded-corners-hover-effects-or-shadows",
+      "title": "Increase font sizes by 50% for all button text across the site including MorshidButton component (frontend/src/components/MorshidButton.tsx), WhatsAppFloatingButton (frontend/src/components/WhatsAppFloatingButton.tsx), and any inline button implementations in pages (HomePage, ForFarmersPage, ContactPage) without changing button styling, colors, rounded corners, hover effects, or shadows.",
+      "reqIds": [
+        "REQ-43"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-font-sizes-by-50-in-the-sitefooter-component-frontend-src-components-sitefooter-tsx-for-all-footer-text-including-the-contact-information-line-and-caffeine-ai-attribution-without-changing-the-footer-layout-colors-logo-or-content",
+      "title": "Increase font sizes by 50% in the SiteFooter component (frontend/src/components/SiteFooter.tsx) for all footer text including the contact information line and Caffeine.ai attribution without changing the footer layout, colors, logo, or content.",
+      "reqIds": [
+        "REQ-44"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-font-sizes-by-50-in-the-homepage-component-frontend-src-pages-homepage-tsx-for-all-text-elements-including-hero-headline-subtitle-availability-text-section-titles-card-text-testimonial-quotes-stats-text-and-cta-text-without-changing-any-layouts-images-colors-backgrounds-spacing-or-component-structure",
+      "title": "Increase font sizes by 50% in the HomePage component (frontend/src/pages/HomePage.tsx) for all text elements including hero headline/subtitle/availability text, section titles, card text, testimonial quotes, stats text, and CTA text without changing any layouts, images, colors, backgrounds, spacing, or component structure.",
+      "reqIds": [
+        "REQ-45"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-font-sizes-by-50-in-the-forfarmerspage-component-frontend-src-pages-forfarmerspage-tsx-for-all-text-elements-including-hero-title-subtitle-service-card-titles-descriptions-faq-questions-answers-and-cta-section-text-without-changing-any-layouts-images-colors-backgrounds-accordion-functionality-or-component-structure",
+      "title": "Increase font sizes by 50% in the ForFarmersPage component (frontend/src/pages/ForFarmersPage.tsx) for all text elements including hero title/subtitle, service card titles/descriptions, FAQ questions/answers, and CTA section text without changing any layouts, images, colors, backgrounds, accordion functionality, or component structure.",
+      "reqIds": [
+        "REQ-46"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-font-sizes-by-50-in-the-contactpage-component-frontend-src-pages-contactpage-tsx-for-the-page-title-subtitle-card-titles-descriptions-and-response-time-note-text-without-changing-card-layouts-colors-icons-links-or-component-structure",
+      "title": "Increase font sizes by 50% in the ContactPage component (frontend/src/pages/ContactPage.tsx) for the page title, subtitle, card titles/descriptions, and response-time note text without changing card layouts, colors, icons, links, or component structure.",
+      "reqIds": [
+        "REQ-47"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-font-sizes-by-50-in-the-logopopup-component-frontend-src-components-logopopup-tsx-for-the-title-with-morshid-and-message-text-without-changing-the-modal-structure-close-button-backdrop-or-click-outside-to-close-functionality",
+      "title": "Increase font sizes by 50% in the LogoPopup component (frontend/src/components/LogoPopup.tsx) for the title 'With MORSHID' and message text without changing the modal structure, close button, backdrop, or click-outside-to-close functionality.",
+      "reqIds": [
+        "REQ-48"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-reduce-all-font-sizes-in-frontend-src-index-css-by-adjusting-the-root-font-size-or-text-size-utility-classes-so-that-all-base-font-sizes-headings-body-text-paragraphs-lists-labels-are-only-15-25-larger-than-the-original-size-not-50-larger",
+      "title": "Reduce all font sizes in frontend/src/index.css by adjusting the root font-size or text size utility classes so that all base font sizes (headings, body text, paragraphs, lists, labels) are only 15-25% larger than the original size, not 50% larger.",
+      "reqIds": [
+        "REQ-49"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-reduce-font-sizes-in-the-siteheader-component-frontend-src-components-siteheader-tsx-for-all-navigation-links-home-for-farmers-contact-from-50-increase-to-15-25-larger-than-original-without-changing-the-header-structure-layout-logo-colors-hover-effects-or-active-link-highlighting",
+      "title": "Reduce font sizes in the SiteHeader component (frontend/src/components/SiteHeader.tsx) for all navigation links (Home, For Farmers, Contact) from 50% increase to 15-25% larger than original, without changing the header structure, layout, logo, colors, hover effects, or active link highlighting.",
+      "reqIds": [
+        "REQ-50"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-reduce-font-sizes-for-all-button-text-across-the-site-to-15-25-larger-than-original-from-50-increase-including-morshidbutton-component-frontend-src-components-morshidbutton-tsx-whatsappfloatingbutton-frontend-src-components-whatsappfloatingbutton-tsx-and-any-inline-button-implementations-in-pages-homepage-forfarmerspage-contactpage-without-changing-button-styling-colors-rounded-corners-hover-effects-or-shadows",
+      "title": "Reduce font sizes for all button text across the site to 15-25% larger than original (from 50% increase) including MorshidButton component (frontend/src/components/MorshidButton.tsx), WhatsAppFloatingButton (frontend/src/components/WhatsAppFloatingButton.tsx), and any inline button implementations in pages (HomePage, ForFarmersPage, ContactPage) without changing button styling, colors, rounded corners, hover effects, or shadows.",
+      "reqIds": [
+        "REQ-51"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-reduce-font-sizes-in-the-sitefooter-component-frontend-src-components-sitefooter-tsx-from-50-increase-to-15-25-larger-than-original-for-all-footer-text-including-the-contact-information-line-and-caffeine-ai-attribution-without-changing-the-footer-layout-colors-logo-or-content",
+      "title": "Reduce font sizes in the SiteFooter component (frontend/src/components/SiteFooter.tsx) from 50% increase to 15-25% larger than original for all footer text including the contact information line and Caffeine.ai attribution, without changing the footer layout, colors, logo, or content.",
+      "reqIds": [
+        "REQ-52"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-reduce-font-sizes-in-the-homepage-component-frontend-src-pages-homepage-tsx-from-50-increase-to-15-25-larger-than-original-for-all-text-elements-including-hero-headline-subtitle-availability-text-section-titles-card-text-testimonial-quotes-stats-text-and-cta-text-without-changing-any-layouts-images-colors-backgrounds-spacing-or-component-structure",
+      "title": "Reduce font sizes in the HomePage component (frontend/src/pages/HomePage.tsx) from 50% increase to 15-25% larger than original for all text elements including hero headline/subtitle/availability text, section titles, card text, testimonial quotes, stats text, and CTA text, without changing any layouts, images, colors, backgrounds, spacing, or component structure.",
+      "reqIds": [
+        "REQ-53"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-reduce-font-sizes-in-the-forfarmerspage-component-frontend-src-pages-forfarmerspage-tsx-from-50-increase-to-15-25-larger-than-original-for-all-text-elements-including-hero-title-subtitle-service-card-titles-descriptions-faq-questions-answers-and-cta-section-text-without-changing-any-layouts-images-colors-backgrounds-accordion-functionality-or-component-structure",
+      "title": "Reduce font sizes in the ForFarmersPage component (frontend/src/pages/ForFarmersPage.tsx) from 50% increase to 15-25% larger than original for all text elements including hero title/subtitle, service card titles/descriptions, FAQ questions/answers, and CTA section text, without changing any layouts, images, colors, backgrounds, accordion functionality, or component structure.",
+      "reqIds": [
+        "REQ-54"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-reduce-font-sizes-in-the-contactpage-component-frontend-src-pages-contactpage-tsx-from-50-increase-to-15-25-larger-than-original-for-the-page-title-subtitle-card-titles-descriptions-and-response-time-note-text-without-changing-card-layouts-colors-icons-links-or-component-structure",
+      "title": "Reduce font sizes in the ContactPage component (frontend/src/pages/ContactPage.tsx) from 50% increase to 15-25% larger than original for the page title, subtitle, card titles/descriptions, and response-time note text, without changing card layouts, colors, icons, links, or component structure.",
+      "reqIds": [
+        "REQ-55"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-reduce-font-sizes-in-the-logopopup-component-frontend-src-components-logopopup-tsx-from-50-increase-to-15-25-larger-than-original-for-the-title-with-morshid-and-message-text-without-changing-the-modal-structure-close-button-backdrop-or-click-outside-to-close-functionality",
+      "title": "Reduce font sizes in the LogoPopup component (frontend/src/components/LogoPopup.tsx) from 50% increase to 15-25% larger than original for the title 'With MORSHID' and message text, without changing the modal structure, close button, backdrop, or click-outside-to-close functionality.",
+      "reqIds": [
+        "REQ-56"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-siteheader-component-frontend-src-components-siteheader-tsx-to-reduce-the-horizontal-spacing-gap-between-navigation-links-home-for-farmers-contact-so-they-appear-closer-together-and-less-spread-out-without-changing-the-header-structure-logo-link-labels-destinations-font-sizes-colors-active-link-highlighting-or-hover-effects",
+      "title": "Update the SiteHeader component (frontend/src/components/SiteHeader.tsx) to reduce the horizontal spacing/gap between navigation links (Home, For Farmers, Contact) so they appear closer together and less spread out, without changing the header structure, logo, link labels, destinations, font sizes, colors, active link highlighting, or hover effects.",
+      "reqIds": [
+        "REQ-57"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-homepage-component-frontend-src-pages-homepage-tsx-see-morshid-in-action-videos-section-to-add-two-new-embedded-youtube-videos-for-https-www-youtube-com-watch-v-15spmyeqtbk-and-https-www-youtube-com-watch-v-lbularhso58-alongside-the-existing-videos-and-ensure-all-videos-existing-new-are-rendered-at-the-same-size-and-are-visually-aligned-without-changing-any-other-page-sections-copy-images-or-layout",
+      "title": "Update the HomePage component (frontend/src/pages/HomePage.tsx) \"See MORSHID in Action\" videos section to add two new embedded YouTube videos for https://www.youtube.com/watch?v=15sPMyEQtbk and https://www.youtube.com/watch?v=lbUlArhso58 alongside the existing videos, and ensure all videos (existing + new) are rendered at the same size and are visually aligned, without changing any other page sections, copy, images, or layout.",
+      "reqIds": [
+        "REQ-58"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -349,6 +573,56 @@
     {
       "id": "AR-22",
       "summary": "Section backgrounds: alternate between white, light gray #F5F5F5, and light green #E8F5E9 across the site for visual variety (do not change anything else)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Add uploaded MORSHID logo image in header (left before nav), footer (top), and Home hero (centered above main headline) without replacing any \"MORSHID\" sentence text or changing anything else",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Home page: In the \"See MORSHID in Action\" videos section, add a third YouTube video (https://www.youtube.com/watch?v=FAGAphpcsHI) alongside the existing videos, and ensure all videos are the same size and aligned (do not change anything else)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Home page hero logo: make it clickable to show a popup card with title \"With MORSHID\", message \"Nothing to lose, everything to gain. Expert advice, saved time, better harvests, higher profits.\", and X close button (only for hero logo, not header/footer logos)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Replace Home page hero background image with a new high-quality AI-generated image: happy Moroccan farmer family in bright green wheat field, sunny/clear blue sky, vibrant colors, golden sunlight, warm/hopeful feeling, father holding smartphone, green crops, light/cheerful atmosphere (do not change anything else)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Replace the Home page hero background image (frontend/src/pages/HomePage.tsx) with a new AI-generated high-quality image while keeping the exact same asset filename and path '/assets/generated/morshid-hero-farmer-family.dim_1920x1080.png'; do not change any other hero section elements (logo, headline, subtitle, CTA button, availability text, overlay, or layout).",
+      "reqIds": [
+        "REQ-40"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-29",
+      "summary": "Site-wide: reduce font sizes from 50% increase to only 15-25% larger than original across all text (headings, paragraphs, buttons, nav links, footer); make readable but not overwhelming; do not change anything else",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-30",
+      "summary": "Site-wide navigation: reduce width/spacing of navigation menu (Home, For Farmers, Contact) to make items closer together; do not change anything else",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-31",
+      "summary": "Home page: Add 2 new YouTube videos (https://www.youtube.com/watch?v=15sPMyEQtbk and https://www.youtube.com/watch?v=lbUlArhso58) to the \"See MORSHID in Action\" videos section alongside existing videos; ensure all videos are the same size and aligned; do not change anything else",
       "reqIds": [],
       "status": "pending"
     }

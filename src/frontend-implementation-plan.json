@@ -1,94 +1,41 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "MORSHID styling polish: nav active/hover, consistent buttons, standardized cards, alternating section backgrounds",
+  "title": "Reduce navigation spacing and add two new videos to Home page",
   "requirements": [
     {
-      "id": "REQ-26",
-      "summary": "Polish header nav links: active route highlighted in #25D366 and underline on hover without changing structure/labels/paths.",
+      "id": "REQ-57",
+      "summary": "Reduce horizontal spacing between navigation links in SiteHeader to make them appear closer together",
       "acceptanceCriteria": [
-        "On each route (/ , /for-farmers , /contact), exactly one corresponding nav link is visually highlighted using #25D366.",
-        "Hovering any nav link shows a visible underline effect (in addition to any existing hover color), and the underline effect works on desktop browsers.",
-        "No changes are made to navigation labels (Home, For Farmers, Contact) or their target paths."
+        "Navigation links (Home, For Farmers, Contact) have reduced horizontal spacing between them",
+        "Links appear visibly closer together compared to current layout",
+        "All existing navigation functionality remains unchanged (active highlighting, hover effects, routing)",
+        "Header logo, structure, and sticky behavior remain unchanged"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/SiteHeader.tsx",
           "operation": "modify",
-          "description": "Update nav Link class styling to (1) render active link text color using exactly #25D366 and (2) add an underline-on-hover effect (e.g., underline + offset) while preserving existing structure, labels, and destinations. Verify the component's usage instructions before implementing."
+          "description": "Reduce the horizontal gap between navigation links in the nav element by decreasing the gap utility class (currently gap-8) to a smaller value such as gap-3 or gap-4, ensuring links remain readable and functional while appearing closer together"
         }
       ]
     },
     {
-      "id": "REQ-27",
-      "summary": "Make button styling consistent site-wide: rounded corners + shadow on hover for all buttons/links-as-buttons, without modifying frontend/src/components/ui.",
+      "id": "REQ-58",
+      "summary": "Add two new YouTube videos to the HomePage videos section and ensure all videos are the same size and aligned",
       "acceptanceCriteria": [
-        "All buttons across Home, For Farmers, Contact, and the floating WhatsApp button have rounded corners (where applicable) and show a shadow effect on hover.",
-        "No files under frontend/src/components/ui are modified.",
-        "Button text, destinations (href/to), and existing layout/spacing are preserved."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/MorshidButton.tsx",
-          "operation": "modify",
-          "description": "Enhance the shadcn-ui-based MorshidButton wrapper to enforce a consistent hover shadow (and keep rounded corners) across all button usages, including asChild links. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add global button styling rules (outside frontend/src/components/ui) to ensure non-MorshidButton buttons (e.g., any native <button> rendered by other components) also get rounded corners and a hover shadow, while preserving spacing and existing typography/colors. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/WhatsAppFloatingButton.tsx",
-          "operation": "modify",
-          "description": "Confirm/adjust floating WhatsApp button classes so it conforms to the same hover-shadow behavior and keeps its rounded shape, without changing link destination or layout. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-28",
-      "summary": "Standardize card styling across pages: white background, light shadow, rounded corners, and themed colored top border while preserving existing theme colors.",
-      "acceptanceCriteria": [
-        "All card-like UI elements on Home, For Farmers, and Contact render with a white background, light shadow, and rounded corners.",
-        "All cards display a colored top border; cards with an existing theme color retain that theme color for the top border (e.g., blue/orange/brown where already used).",
-        "No user-facing text is changed."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/MorshidCard.tsx",
-          "operation": "modify",
-          "description": "Update the shadcn-ui-based MorshidCard wrapper so the default card appearance is standardized (white background, light shadow, rounded corners) while preserving existing topBorderColor behavior and allowing per-page theme colors (blue/orange/brown/green) to remain intact. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/ForFarmersPage.tsx",
-          "operation": "modify",
-          "description": "Adjust any card-like elements not fully covered by MorshidCard (e.g., FAQ accordion item wrappers) to match the standardized card styling (white bg, light shadow, rounded corners, with a top border where applicable) without changing copy or layout structure. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-29",
-      "summary": "Alternate major section backgrounds across pages using only white, #F5F5F5, and #E8F5E9 without changing copy/images/links/order.",
-      "acceptanceCriteria": [
-        "Across Home, For Farmers, and Contact pages, adjacent major sections do not all share the same background; backgrounds alternate using only white, #F5F5F5, and #E8F5E9.",
-        "The existing section order, section content, and all links remain unchanged.",
-        "The specified hex values (#F5F5F5 and #E8F5E9) are used exactly where those backgrounds are applied."
+        "Two new YouTube videos (15sPMyEQtbk and lbUlArhso58) are embedded in the \"See MORSHID in Action\" section",
+        "All videos in the section (existing + new) have identical dimensions",
+        "All videos are visually aligned with consistent spacing",
+        "Videos are responsive and maintain alignment on different screen sizes",
+        "Section title and any surrounding content remain unchanged",
+        "No other page sections are modified"
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/HomePage.tsx",
           "operation": "modify",
-          "description": "Update Home page section container background styling so adjacent major sections alternate between white, #F5F5F5, and #E8F5E9 (using the exact hex values where applied), while preserving section order, all copy, links, and the existing hero image usage. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/ForFarmersPage.tsx",
-          "operation": "modify",
-          "description": "Update For Farmers page section backgrounds to alternate between white, #F5F5F5, and #E8F5E9 (exact hex values where applied), without changing section order, content, or links. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/ContactPage.tsx",
-          "operation": "modify",
-          "description": "Adjust Contact page background styling to align with the alternating palette (white, #F5F5F5, #E8F5E9) without introducing new sections, changing existing content, or altering non-green theme accents (e.g., the email blue). Verify the component's usage instructions before implementing."
+          "description": "Add two new YouTube video embeds (https://www.youtube.com/watch?v=15sPMyEQtbk and https://www.youtube.com/watch?v=lbUlArhso58) to the existing videos section, ensure all video iframes use consistent width and height attributes or CSS classes for uniform sizing, and apply consistent spacing between all videos using a grid or flexbox layout with equal gaps"
         }
       ]
     }

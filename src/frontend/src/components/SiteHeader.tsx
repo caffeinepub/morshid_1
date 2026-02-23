@@ -13,10 +13,14 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link to="/" className="text-2xl font-bold text-morshid-dark">
-          MORSHID
+        <Link to="/" className="flex items-center gap-3">
+          <img 
+            src="/assets/logo%20MORSHID.png" 
+            alt="MORSHID Logo" 
+            className="h-10 w-auto"
+          />
         </Link>
-        <nav className="flex items-center gap-8">
+        <nav className="flex items-center gap-3">
           {navLinks.map((link) => (
             <Link
               key={link.path}

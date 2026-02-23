@@ -16,7 +16,7 @@ const MorshidButton = forwardRef<HTMLButtonElement, MorshidButtonProps>(
         variant={variant}
         size={size}
         asChild={asChild}
-        className={`rounded-lg transition-shadow hover:shadow-lg ${className || ""}`}
+        className={`text-base rounded-lg transition-shadow hover:shadow-lg ${className || ""}`}
         {...props}
       />
     );

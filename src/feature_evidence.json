@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-header-navigation-link-styling-so-the-current-route-link-is-highlighted-in-exactly-25d366-and-all-navigation-links-show-an-underline-effect-on-hover-without-changing-header-structure-labels-or-link-destinations",
-      "featureTitle": "Update the header navigation link styling so the current route link is highlighted in exactly #25D366 and all navigation links show an underline effect on hover, without changing header structure, labels, or link destinations.",
+      "featureId": "feature-update-the-siteheader-component-frontend-src-components-siteheader-tsx-to-reduce-the-horizontal-spacing-gap-between-navigation-links-home-for-farmers-contact-so-they-appear-closer-together-and-less-spread-out-without-changing-the-header-structure-logo-link-labels-destinations-font-sizes-colors-active-link-highlighting-or-hover-effects",
+      "featureTitle": "Update the SiteHeader component (frontend/src/components/SiteHeader.tsx) to reduce the horizontal spacing/gap between navigation links (Home, For Farmers, Contact) so they appear closer together and less spread out, without changing the header structure, logo, link labels, destinations, font sizes, colors, active link highlighting, or hover effects.",
       "files": [
         "frontend/src/components/SiteHeader.tsx"
       ],
@@ -15,55 +15,14 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-26"
+        "REQ-57"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-ensure-site-wide-button-styling-is-consistent-and-includes-rounded-corners-and-a-shadow-on-hover-effect-for-every-button-including-links-rendered-as-buttons-without-editing-any-files-under-frontend-src-components-ui",
-      "featureTitle": "Ensure site-wide button styling is consistent and includes rounded corners and a shadow-on-hover effect for every button (including links rendered as buttons), without editing any files under frontend/src/components/ui.",
+      "featureId": "feature-update-the-homepage-component-frontend-src-pages-homepage-tsx-see-morshid-in-action-videos-section-to-add-two-new-embedded-youtube-videos-for-https-www-youtube-com-watch-v-15spmyeqtbk-and-https-www-youtube-com-watch-v-lbularhso58-alongside-the-existing-videos-and-ensure-all-videos-existing-new-are-rendered-at-the-same-size-and-are-visually-aligned-without-changing-any-other-page-sections-copy-images-or-layout",
+      "featureTitle": "Update the HomePage component (frontend/src/pages/HomePage.tsx) \"See MORSHID in Action\" videos section to add two new embedded YouTube videos for https://www.youtube.com/watch?v=15sPMyEQtbk and https://www.youtube.com/watch?v=lbUlArhso58 alongside the existing videos, and ensure all videos (existing + new) are rendered at the same size and are visually aligned, without changing any other page sections, copy, images, or layout.",
       "files": [
-        "frontend/src/components/MorshidButton.tsx",
-        "frontend/src/components/WhatsAppFloatingButton.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-27"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-standardize-card-styling-across-the-site-so-all-cards-have-white-background-light-shadow-rounded-corners-and-a-colored-top-border-that-matches-each-card-s-theme-while-keeping-existing-non-green-theme-colors-like-blue-orange-brown-where-they-already-exist",
-      "featureTitle": "Standardize card styling across the site so all cards have: white background, light shadow, rounded corners, and a colored top border that matches each card’s theme (while keeping existing non-green theme colors like blue/orange/brown where they already exist).",
-      "files": [
-        "frontend/src/components/MorshidCard.tsx",
-        "frontend/src/pages/ForFarmersPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-28"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-adjust-section-background-styling-across-all-pages-so-major-sections-alternate-between-white-light-gray-f5f5f5-and-light-green-e8f5e9-for-visual-variety-without-changing-any-copy-images-links-or-section-order",
-      "featureTitle": "Adjust section background styling across all pages so major sections alternate between white, light gray (#F5F5F5), and light green (#E8F5E9) for visual variety, without changing any copy, images, links, or section order.",
-      "files": [
-        "frontend/src/pages/ContactPage.tsx",
-        "frontend/src/pages/ForFarmersPage.tsx",
         "frontend/src/pages/HomePage.tsx"
       ],
       "components": [
@@ -74,7 +33,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-29"
+        "REQ-58"
       ],
       "confidence": "high"
     }

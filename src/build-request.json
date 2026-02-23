@@ -1,92 +1,65 @@
 {
   "kind": "build_request",
-  "title": "Site-wide styling polish: buttons, cards, section backgrounds, and nav hover/active",
-  "projectName": "MORSHID",
+  "title": "Reduce navigation spacing and add two new videos to Home page",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-26",
-      "text": "Update the header navigation link styling so the current route link is highlighted in exactly #25D366 and all navigation links show an underline effect on hover, without changing header structure, labels, or link destinations.",
+      "id": "REQ-57",
+      "text": "Update the SiteHeader component (frontend/src/components/SiteHeader.tsx) to reduce the horizontal spacing/gap between navigation links (Home, For Farmers, Contact) so they appear closer together and less spread out, without changing the header structure, logo, link labels, destinations, font sizes, colors, active link highlighting, or hover effects.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-latest"
         ],
         "quotes": [
-          "Navigation:\nMake the current page link highlighted in green #25D366.\nAdd underline effect on hover for navigation links."
+          "Reduce the width/spacing of the navigation menu (Home, For Farmers, Contact). Make the navigation items closer together and less spread out."
         ]
       },
       "acceptanceCriteria": [
-        "On each route (/ , /for-farmers , /contact), exactly one corresponding nav link is visually highlighted using #25D366.",
-        "Hovering any nav link shows a visible underline effect (in addition to any existing hover color), and the underline effect works on desktop browsers.",
-        "No changes are made to navigation labels (Home, For Farmers, Contact) or their target paths."
+        "Navigation links (Home, For Farmers, Contact) have reduced horizontal spacing between them",
+        "Links appear visibly closer together compared to current layout",
+        "All existing navigation functionality remains unchanged (active highlighting, hover effects, routing)",
+        "Header logo, structure, and sticky behavior remain unchanged"
       ]
     },
     {
-      "id": "REQ-27",
-      "text": "Ensure site-wide button styling is consistent and includes rounded corners and a shadow-on-hover effect for every button (including links rendered as buttons), without editing any files under frontend/src/components/ui.",
+      "id": "REQ-58",
+      "text": "Update the HomePage component (frontend/src/pages/HomePage.tsx) \"See MORSHID in Action\" videos section to add two new embedded YouTube videos for https://www.youtube.com/watch?v=15sPMyEQtbk and https://www.youtube.com/watch?v=lbUlArhso58 alongside the existing videos, and ensure all videos (existing + new) are rendered at the same size and are visually aligned, without changing any other page sections, copy, images, or layout.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-latest"
         ],
         "quotes": [
-          "Make all buttons have the same style: rounded corners, shadow on hover."
+          "Add these 2 new videos to the existing videos: - https://www.youtube.com/watch?v=15sPMyEQtbk - https://www.youtube.com/watch?v=lbUlArhso58",
+          "Make all videos the same size and aligned."
         ]
       },
       "acceptanceCriteria": [
-        "All buttons across Home, For Farmers, Contact, and the floating WhatsApp button have rounded corners (where applicable) and show a shadow effect on hover.",
-        "No files under frontend/src/components/ui are modified.",
-        "Button text, destinations (href/to), and existing layout/spacing are preserved."
-      ]
-    },
-    {
-      "id": "REQ-28",
-      "text": "Standardize card styling across the site so all cards have: white background, light shadow, rounded corners, and a colored top border that matches each card’s theme (while keeping existing non-green theme colors like blue/orange/brown where they already exist).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "Cards styling:\nAll cards should have:\n- White background\n- Light shadow\n- Rounded corners\n- Colored top border matching their theme"
-        ]
-      },
-      "acceptanceCriteria": [
-        "All card-like UI elements on Home, For Farmers, and Contact render with a white background, light shadow, and rounded corners.",
-        "All cards display a colored top border; cards with an existing theme color retain that theme color for the top border (e.g., blue/orange/brown where already used).",
-        "No user-facing text is changed."
-      ]
-    },
-    {
-      "id": "REQ-29",
-      "text": "Adjust section background styling across all pages so major sections alternate between white, light gray (#F5F5F5), and light green (#E8F5E9) for visual variety, without changing any copy, images, links, or section order.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "Section backgrounds:\nAlternate between white, light gray #F5F5F5, and light green #E8F5E9 for visual variety.\n\nDO NOT change anything else."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Across Home, For Farmers, and Contact pages, adjacent major sections do not all share the same background; backgrounds alternate using only white, #F5F5F5, and #E8F5E9.",
-        "The existing section order, section content, and all links remain unchanged.",
-        "The specified hex values (#F5F5F5 and #E8F5E9) are used exactly where those backgrounds are applied."
+        "Two new YouTube videos (15sPMyEQtbk and lbUlArhso58) are embedded in the \"See MORSHID in Action\" section",
+        "All videos in the section (existing + new) have identical dimensions",
+        "All videos are visually aligned with consistent spacing",
+        "Videos are responsive and maintain alignment on different screen sizes",
+        "Section title and any surrounding content remain unchanged",
+        "No other page sections are modified"
       ]
     }
   ],
   "constraints": [
-    "Do not change anything other than the styling changes explicitly requested (no content/copy changes, no new sections, no link destination changes).",
-    "Do not edit any files under frontend/src/components/ui (immutable).",
-    "Keep all existing routes and navigation destinations exactly the same.",
-    "Any green used for UI styling must remain exactly #25D366 (WhatsApp green)."
+    "Do not change anything else on the site beyond navigation spacing and video additions",
+    "Do not modify header structure, logo, link labels, destinations, font sizes, colors, or hover effects",
+    "Do not change any other HomePage sections beyond the videos section",
+    "Maintain all existing video functionality and embed behavior"
   ],
   "nonGoals": [
-    "Adding new pages, features, or backend functionality.",
-    "Changing brand assets, hero images, or YouTube video IDs/URLs.",
-    "Changing the Contact page’s non-green theme colors (e.g., its existing blue email styling) beyond applying the requested shared card/button styling where applicable."
+    "Modifying font sizes",
+    "Changing button styling",
+    "Updating card layouts",
+    "Adjusting section backgrounds",
+    "Modifying footer content",
+    "Changing WhatsApp button positioning",
+    "Updating any page copy or images",
+    "Modifying hero sections"
   ],
   "imageRequirements": {
     "required": [],
