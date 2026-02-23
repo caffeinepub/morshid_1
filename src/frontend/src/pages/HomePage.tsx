@@ -3,9 +3,11 @@ import { MorshidButton } from "@/components/MorshidButton";
 import { MorshidCard, CardContent } from "@/components/MorshidCard";
 import { LogoPopup } from "@/components/LogoPopup";
 import { Lightbulb, Shield, TrendingUp, Package, MessageCircle, Cpu, CheckCircle, ArrowRight } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function HomePage() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div className="w-full">
@@ -30,10 +32,10 @@ export default function HomePage() {
             />
           </button>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl mx-auto">
-            Your Complete Farming Companion — From Seed to Sale
+            {t('home.hero.title')}
           </h1>
           <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
-            Get personalized advice, protect your crops, discover better prices, and connect to services — all via simple WhatsApp messages.
+            {t('home.hero.subtitle')}
           </p>
           <MorshidButton 
             size="lg"
@@ -45,11 +47,11 @@ export default function HomePage() {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              Get Free Help on WhatsApp
+              {t('home.hero.cta')}
             </a>
           </MorshidButton>
           <p className="text-white text-base">
-            Available 24/7 • Free • Voice & Text
+            {t('home.hero.availability')}
           </p>
         </div>
       </section>
@@ -58,8 +60,8 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">How MORSHID Supports You</h2>
-            <p className="text-xl text-gray-600">Beyond Advice — A Complete Farming Solution</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('home.pillars.title')}</h2>
+            <p className="text-xl text-gray-600">{t('home.pillars.subtitle')}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -67,9 +69,9 @@ export default function HomePage() {
             <MorshidCard topBorderColor="#25D366">
               <CardContent className="pt-8 pb-6 px-6">
                 <Lightbulb className="w-12 h-12 mb-4 text-[#25D366]" />
-                <h3 className="text-xl font-bold mb-3">Smart Farming Advice</h3>
+                <h3 className="text-xl font-bold mb-3">{t('home.pillars.advice.title')}</h3>
                 <p className="text-base text-gray-600">
-                  Instant diagnosis for plant diseases. Personalized crop care plans. Daily tips for your region.
+                  {t('home.pillars.advice.desc')}
                 </p>
               </CardContent>
             </MorshidCard>
@@ -78,9 +80,9 @@ export default function HomePage() {
             <MorshidCard topBorderColor="#03A9F4">
               <CardContent className="pt-8 pb-6 px-6">
                 <Shield className="w-12 h-12 mb-4" style={{ color: '#03A9F4' }} />
-                <h3 className="text-xl font-bold mb-3">Secure Your Livelihood</h3>
+                <h3 className="text-xl font-bold mb-3">{t('home.pillars.secure.title')}</h3>
                 <p className="text-base text-gray-600">
-                  Access crop insurance information. Learn about government aid. Find affordable credit options.
+                  {t('home.pillars.secure.desc')}
                 </p>
               </CardContent>
             </MorshidCard>
@@ -89,9 +91,9 @@ export default function HomePage() {
             <MorshidCard topBorderColor="#FF8F00">
               <CardContent className="pt-8 pb-6 px-6">
                 <TrendingUp className="w-12 h-12 mb-4" style={{ color: '#FF8F00' }} />
-                <h3 className="text-xl font-bold mb-3">Sell Smarter</h3>
+                <h3 className="text-xl font-bold mb-3">{t('home.pillars.sell.title')}</h3>
                 <p className="text-base text-gray-600">
-                  Get live market prices. Know the best time to sell. Connect with trustworthy buyers.
+                  {t('home.pillars.sell.desc')}
                 </p>
               </CardContent>
             </MorshidCard>
@@ -100,9 +102,9 @@ export default function HomePage() {
             <MorshidCard topBorderColor="#795548">
               <CardContent className="pt-8 pb-6 px-6">
                 <Package className="w-12 h-12 mb-4" style={{ color: '#795548' }} />
-                <h3 className="text-xl font-bold mb-3">Trusted Inputs</h3>
+                <h3 className="text-xl font-bold mb-3">{t('home.pillars.inputs.title')}</h3>
                 <p className="text-base text-gray-600">
-                  Find quality seeds and fertilizers. Compare prices from local suppliers.
+                  {t('home.pillars.inputs.desc')}
                 </p>
               </CardContent>
             </MorshidCard>
@@ -113,7 +115,7 @@ export default function HomePage() {
       {/* SECTION 3 - VIDEOS */}
       <section className="py-16 md:py-24" style={{ backgroundColor: '#F5F5F5' }}>
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">See MORSHID in Action</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{t('home.videos.title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <div className="aspect-video">
@@ -169,8 +171,8 @@ export default function HomePage() {
       <section className="py-16 md:py-24" style={{ backgroundColor: '#E8F5E9' }}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">How Easy Is It?</h2>
-            <p className="text-xl text-gray-600">3 Simple Steps on WhatsApp</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('home.howItWorks.title')}</h2>
+            <p className="text-xl text-gray-600">{t('home.howItWorks.subtitle')}</p>
           </div>
 
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-4 max-w-5xl mx-auto mb-12">
@@ -180,14 +182,14 @@ export default function HomePage() {
                 1
               </div>
               <MessageCircle className="w-12 h-12 mx-auto mb-4 text-[#25D366]" />
-              <h3 className="text-xl font-bold mb-2">Send a Message</h3>
+              <h3 className="text-xl font-bold mb-2">{t('home.howItWorks.step1.title')}</h3>
               <p className="text-base text-gray-600">
-                Open WhatsApp and send your question — text or voice
+                {t('home.howItWorks.step1.desc')}
               </p>
             </div>
 
             {/* Arrow */}
-            <ArrowRight className="hidden lg:block w-8 h-8 text-gray-400 flex-shrink-0" />
+            <ArrowRight className="hidden lg:block w-8 h-8 text-gray-400 shrink-0" />
 
             {/* Step 2 */}
             <div className="flex-1 text-center">
@@ -195,14 +197,14 @@ export default function HomePage() {
                 2
               </div>
               <Cpu className="w-12 h-12 mx-auto mb-4 text-[#25D366]" />
-              <h3 className="text-xl font-bold mb-2">MORSHID Understands</h3>
+              <h3 className="text-xl font-bold mb-2">{t('home.howItWorks.step2.title')}</h3>
               <p className="text-base text-gray-600">
-                Our AI finds the best answer for you
+                {t('home.howItWorks.step2.desc')}
               </p>
             </div>
 
             {/* Arrow */}
-            <ArrowRight className="hidden lg:block w-8 h-8 text-gray-400 flex-shrink-0" />
+            <ArrowRight className="hidden lg:block w-8 h-8 text-gray-400 shrink-0" />
 
             {/* Step 3 */}
             <div className="flex-1 text-center">
@@ -210,9 +212,9 @@ export default function HomePage() {
                 3
               </div>
               <CheckCircle className="w-12 h-12 mx-auto mb-4 text-[#25D366]" />
-              <h3 className="text-xl font-bold mb-2">Get Your Answer</h3>
+              <h3 className="text-xl font-bold mb-2">{t('home.howItWorks.step3.title')}</h3>
               <p className="text-base text-gray-600">
-                Receive clear advice ready to use on your farm
+                {t('home.howItWorks.step3.desc')}
               </p>
             </div>
           </div>
@@ -228,7 +230,7 @@ export default function HomePage() {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                Try It Now — It's Free!
+                {t('home.howItWorks.cta')}
               </a>
             </MorshidButton>
           </div>
@@ -238,16 +240,16 @@ export default function HomePage() {
       {/* SECTION 5 - TRUST */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Join Moroccan Farmers Who Trust MORSHID</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{t('home.trust.title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
             {/* Testimonial 1 */}
             <MorshidCard>
               <CardContent className="pt-8 pb-6 px-6">
                 <p className="text-base text-gray-700 mb-4 italic">
-                  "MORSHID helped me identify a disease on my tomatoes in minutes. I saved my entire crop!"
+                  {t('home.trust.testimonial1')}
                 </p>
-                <p className="font-bold text-[#25D366]">— Ahmed, Agadir</p>
+                <p className="font-bold text-[#25D366]">{t('home.trust.testimonial1.author')}</p>
               </CardContent>
             </MorshidCard>
 
@@ -255,9 +257,9 @@ export default function HomePage() {
             <MorshidCard>
               <CardContent className="pt-8 pb-6 px-6">
                 <p className="text-base text-gray-700 mb-4 italic">
-                  "I got better prices for my oranges by knowing when to sell. Thank you MORSHID!"
+                  {t('home.trust.testimonial2')}
                 </p>
-                <p className="font-bold text-[#25D366]">— Fatima, Berkane</p>
+                <p className="font-bold text-[#25D366]">{t('home.trust.testimonial2.author')}</p>
               </CardContent>
             </MorshidCard>
 
@@ -265,9 +267,9 @@ export default function HomePage() {
             <MorshidCard>
               <CardContent className="pt-8 pb-6 px-6">
                 <p className="text-base text-gray-700 mb-4 italic">
-                  "Simple to use, always available. MORSHID is like having an expert in my pocket."
+                  {t('home.trust.testimonial3')}
                 </p>
-                <p className="font-bold text-[#25D366]">— Hassan, Meknes</p>
+                <p className="font-bold text-[#25D366]">{t('home.trust.testimonial3.author')}</p>
               </CardContent>
             </MorshidCard>
           </div>
@@ -275,15 +277,15 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
             <div>
               <div className="text-4xl font-bold text-[#25D366] mb-2">10,000+</div>
-              <p className="text-base text-gray-600">Farmers Helped</p>
+              <p className="text-base text-gray-600">{t('home.trust.stat1')}</p>
             </div>
             <div>
               <div className="text-4xl font-bold text-[#25D366] mb-2">24/7</div>
-              <p className="text-base text-gray-600">Always Available</p>
+              <p className="text-base text-gray-600">{t('home.trust.stat2')}</p>
             </div>
             <div>
               <div className="text-4xl font-bold text-[#25D366] mb-2">100% Free</div>
-              <p className="text-base text-gray-600">No Hidden Costs</p>
+              <p className="text-base text-gray-600">{t('home.trust.stat3')}</p>
             </div>
           </div>
         </div>
@@ -293,10 +295,10 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-[#25D366]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Farm?
+            {t('home.finalCta.title')}
           </h2>
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Join thousands of Moroccan farmers already using MORSHID. Start getting expert advice today — completely free.
+            {t('home.finalCta.subtitle')}
           </p>
           <MorshidButton 
             size="lg"
@@ -308,7 +310,7 @@ export default function HomePage() {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              Start Now on WhatsApp
+              {t('home.finalCta.cta')}
             </a>
           </MorshidButton>
         </div>

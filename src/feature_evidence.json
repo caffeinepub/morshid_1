@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-siteheader-component-frontend-src-components-siteheader-tsx-to-reduce-the-horizontal-spacing-gap-between-navigation-links-home-for-farmers-contact-so-they-appear-closer-together-and-less-spread-out-without-changing-the-header-structure-logo-link-labels-destinations-font-sizes-colors-active-link-highlighting-or-hover-effects",
-      "featureTitle": "Update the SiteHeader component (frontend/src/components/SiteHeader.tsx) to reduce the horizontal spacing/gap between navigation links (Home, For Farmers, Contact) so they appear closer together and less spread out, without changing the header structure, logo, link labels, destinations, font sizes, colors, active link highlighting, or hover effects.",
+      "featureId": "feature-create-a-language-switcher-ui-component-in-the-header-frontend-src-components-siteheader-tsx-displaying-en-fr-text-positioned-near-the-navigation-menu-allowing-users-to-toggle-between-english-and-french-languages-without-changing-the-header-structure-logo-or-existing-navigation-links",
+      "featureTitle": "Create a language switcher UI component in the header (frontend/src/components/SiteHeader.tsx) displaying 'EN | FR' text positioned near the navigation menu, allowing users to toggle between English and French languages without changing the header structure, logo, or existing navigation links.",
       "files": [
         "frontend/src/components/SiteHeader.tsx"
       ],
@@ -15,13 +15,31 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-57"
+        "REQ-78"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-update-the-homepage-component-frontend-src-pages-homepage-tsx-see-morshid-in-action-videos-section-to-add-two-new-embedded-youtube-videos-for-https-www-youtube-com-watch-v-15spmyeqtbk-and-https-www-youtube-com-watch-v-lbularhso58-alongside-the-existing-videos-and-ensure-all-videos-existing-new-are-rendered-at-the-same-size-and-are-visually-aligned-without-changing-any-other-page-sections-copy-images-or-layout",
-      "featureTitle": "Update the HomePage component (frontend/src/pages/HomePage.tsx) \"See MORSHID in Action\" videos section to add two new embedded YouTube videos for https://www.youtube.com/watch?v=15sPMyEQtbk and https://www.youtube.com/watch?v=lbUlArhso58 alongside the existing videos, and ensure all videos (existing + new) are rendered at the same size and are visually aligned, without changing any other page sections, copy, images, or layout.",
+      "featureId": "feature-implement-language-state-management-using-react-context-or-state-hooks-to-track-the-currently-selected-language-english-or-french-and-provide-it-to-all-components-across-the-application-with-the-default-language-set-to-english",
+      "featureTitle": "Implement language state management using React context or state hooks to track the currently selected language (English or French) and provide it to all components across the application, with the default language set to English.",
+      "files": [
+        "frontend/src/contexts/LanguageContext.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-79"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-translate-all-text-content-on-the-home-page-frontend-src-pages-homepage-tsx-to-clear-simple-french-that-farmers-can-easily-understand-including-hero-headline-subtitle-availability-text-section-titles-four-pillars-card-content-how-it-works-step-descriptions-testimonials-stats-text-and-all-cta-button-labels-while-keeping-the-name-morshid-unchanged-in-both-languages",
+      "featureTitle": "Translate all text content on the Home page (frontend/src/pages/HomePage.tsx) to clear, simple French that farmers can easily understand, including hero headline, subtitle, availability text, section titles, Four Pillars card content, How It Works step descriptions, testimonials, stats text, and all CTA button labels, while keeping the name 'MORSHID' unchanged in both languages.",
       "files": [
         "frontend/src/pages/HomePage.tsx"
       ],
@@ -33,7 +51,97 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-58"
+        "REQ-80"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-translate-all-text-content-on-the-for-farmers-page-frontend-src-pages-forfarmerspage-tsx-to-clear-simple-french-that-farmers-can-easily-understand-including-hero-title-subtitle-service-card-titles-service-card-descriptions-faq-questions-and-answers-and-cta-section-text-while-keeping-the-name-morshid-unchanged-in-both-languages",
+      "featureTitle": "Translate all text content on the For Farmers page (frontend/src/pages/ForFarmersPage.tsx) to clear, simple French that farmers can easily understand, including hero title, subtitle, service card titles, service card descriptions, FAQ questions and answers, and CTA section text, while keeping the name 'MORSHID' unchanged in both languages.",
+      "files": [
+        "frontend/src/pages/ForFarmersPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-81"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-translate-all-text-content-on-the-contact-page-frontend-src-pages-contactpage-tsx-to-clear-simple-french-that-farmers-can-easily-understand-including-page-title-subtitle-contact-card-titles-contact-card-descriptions-and-response-time-note-while-keeping-the-name-morshid-unchanged-in-both-languages",
+      "featureTitle": "Translate all text content on the Contact page (frontend/src/pages/ContactPage.tsx) to clear, simple French that farmers can easily understand, including page title, subtitle, contact card titles, contact card descriptions, and response-time note, while keeping the name 'MORSHID' unchanged in both languages.",
+      "files": [
+        "frontend/src/pages/ContactPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-82"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-translate-all-text-content-in-the-header-component-frontend-src-components-siteheader-tsx-including-navigation-link-labels-home-accueil-for-farmers-pour-les-agriculteurs-contact-contact-while-keeping-the-name-morshid-unchanged-in-the-logo",
+      "featureTitle": "Translate all text content in the header component (frontend/src/components/SiteHeader.tsx) including navigation link labels ('Home' → 'Accueil', 'For Farmers' → 'Pour les Agriculteurs', 'Contact' → 'Contact'), while keeping the name 'MORSHID' unchanged in the logo.",
+      "files": [
+        "frontend/src/components/SiteHeader.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-83"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-translate-all-text-content-in-the-whatsapp-floating-button-component-frontend-src-components-whatsappfloatingbutton-tsx-including-any-tooltip-or-aria-label-text-while-keeping-the-whatsapp-link-destination-unchanged",
+      "featureTitle": "Translate all text content in the WhatsApp floating button component (frontend/src/components/WhatsAppFloatingButton.tsx) including any tooltip or aria-label text, while keeping the WhatsApp link destination unchanged.",
+      "files": [
+        "frontend/src/components/WhatsAppFloatingButton.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-85"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-translate-all-text-content-in-the-logopopup-component-frontend-src-components-logopopup-tsx-including-the-title-with-morshid-and-the-message-text-nothing-to-lose-everything-to-gain-expert-advice-saved-time-better-harvests-higher-profits-while-keeping-the-name-morshid-unchanged-and-ensuring-the-modal-structure-close-button-and-click-outside-to-close-functionality-remain-unchanged",
+      "featureTitle": "Translate all text content in the LogoPopup component (frontend/src/components/LogoPopup.tsx) including the title 'With MORSHID' and the message text 'Nothing to lose, everything to gain. Expert advice, saved time, better harvests, higher profits.', while keeping the name 'MORSHID' unchanged and ensuring the modal structure, close button, and click-outside-to-close functionality remain unchanged.",
+      "files": [
+        "frontend/src/components/LogoPopup.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-86"
       ],
       "confidence": "high"
     }

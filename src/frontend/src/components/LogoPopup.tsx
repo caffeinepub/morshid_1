@@ -1,4 +1,5 @@
 import { X } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface LogoPopupProps {
   open: boolean;
@@ -6,6 +7,8 @@ interface LogoPopupProps {
 }
 
 export function LogoPopup({ open, onClose }: LogoPopupProps) {
+  const { t } = useLanguage();
+
   if (!open) return null;
 
   return (
@@ -32,9 +35,9 @@ export function LogoPopup({ open, onClose }: LogoPopupProps) {
         
         {/* Content */}
         <div className="pr-8">
-          <h2 className="text-2xl font-bold mb-4">With MORSHID</h2>
+          <h2 className="text-2xl font-bold mb-4">{t('popup.title')}</h2>
           <p className="text-gray-700 text-base leading-relaxed">
-            Nothing to lose, everything to gain. Expert advice, saved time, better harvests, higher profits.
+            {t('popup.message')}
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 37,
-  "summary": "Website project for \"MORSHID\" with 3 pages (Home, For Farmers, Contact), defined color palette, shared sticky header/footer, persistent floating WhatsApp button, and now all three pages should be fully built out: Home and For Farmers per specified marketing sections (each with its own hero AI background image + CTAs), and Contact page as a complete contact hub with title/subtitle, three contact cards, and response-time note; additionally, add the uploaded MORSHID logo image only in the header (left side before nav), footer (top of footer), and Home hero (centered above main headline) while keeping \"MORSHID\" text wherever it appears in sentences; all font sizes should be 15-25% larger than original (not 50% larger); do not change anything else.",
+  "projectStateVersion": 51,
+  "summary": "Website project for \"MORSHID\" with 3 pages (Home, For Farmers, Contact), defined color palette, shared sticky header/footer, persistent floating WhatsApp button, all three pages fully built out with marketing sections, uploaded MORSHID logo in header/footer/hero, font sizes 15-25% larger, and now with full bilingual (English/French) support via a language switcher in the header and farmer-friendly French translations of all website content while keeping the name \"MORSHID\" unchanged in both languages; do not change anything else.",
   "architectural_notes": [
     "Header and footer should be shared across all pages; header must remain sticky during scroll.",
     "Scope change: Home page should now include full sectioned content as specified; keep other pages/components unchanged unless explicitly requested.",
@@ -459,6 +459,175 @@
         "REQ-58"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-create-a-language-switcher-ui-component-in-the-header-frontend-src-components-siteheader-tsx-that-allows-users-to-toggle-between-english-and-french-languages-displayed-as-either-en-fr-text-or-flag-icons-positioned-near-the-navigation-menu-and-easily-visible-without-changing-the-header-structure-logo-or-existing-navigation-links",
+      "title": "Create a language switcher UI component in the header (frontend/src/components/SiteHeader.tsx) that allows users to toggle between English and French languages, displayed as either 'EN | FR' text or flag icons, positioned near the navigation menu and easily visible without changing the header structure, logo, or existing navigation links.",
+      "reqIds": [
+        "REQ-59"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-language-state-management-using-react-context-or-state-hooks-to-track-the-currently-selected-language-english-or-french-and-provide-it-to-all-components-across-the-application-with-the-default-language-set-to-english",
+      "title": "Implement language state management using React context or state hooks to track the currently selected language (English or French) and provide it to all components across the application, with the default language set to English.",
+      "reqIds": [
+        "REQ-60",
+        "REQ-79"
+      ],
+      "version": 2
+    },
+    {
+      "id": "feature-translate-all-text-content-on-the-home-page-frontend-src-pages-homepage-tsx-to-clear-simple-french-that-farmers-can-easily-understand-including-hero-headline-subtitle-availability-text-section-titles-four-pillars-card-content-how-it-works-step-descriptions-testimonials-stats-text-and-all-cta-button-labels-while-keeping-the-name-morshid-unchanged-in-both-languages-and-ensuring-translations-are-natural-and-relatable-to-farmers-rather-than-technical",
+      "title": "Translate all text content on the Home page (frontend/src/pages/HomePage.tsx) to clear, simple French that farmers can easily understand, including hero headline, subtitle, availability text, section titles, Four Pillars card content, How It Works step descriptions, testimonials, stats text, and all CTA button labels, while keeping the name 'MORSHID' unchanged in both languages and ensuring translations are natural and relatable to farmers rather than technical.",
+      "reqIds": [
+        "REQ-61"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-on-the-for-farmers-page-frontend-src-pages-forfarmerspage-tsx-to-clear-simple-french-that-farmers-can-easily-understand-including-hero-title-subtitle-service-card-titles-service-card-descriptions-faq-questions-and-answers-and-cta-section-text-while-keeping-the-name-morshid-unchanged-in-both-languages-and-ensuring-translations-are-natural-and-relatable-to-farmers-rather-than-technical",
+      "title": "Translate all text content on the For Farmers page (frontend/src/pages/ForFarmersPage.tsx) to clear, simple French that farmers can easily understand, including hero title, subtitle, service card titles, service card descriptions, FAQ questions and answers, and CTA section text, while keeping the name 'MORSHID' unchanged in both languages and ensuring translations are natural and relatable to farmers rather than technical.",
+      "reqIds": [
+        "REQ-62"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-on-the-contact-page-frontend-src-pages-contactpage-tsx-to-clear-simple-french-that-farmers-can-easily-understand-including-page-title-subtitle-contact-card-titles-contact-card-descriptions-and-response-time-note-while-keeping-the-name-morshid-unchanged-in-both-languages-and-ensuring-translations-are-natural-and-relatable-to-farmers-rather-than-technical",
+      "title": "Translate all text content on the Contact page (frontend/src/pages/ContactPage.tsx) to clear, simple French that farmers can easily understand, including page title, subtitle, contact card titles, contact card descriptions, and response-time note, while keeping the name 'MORSHID' unchanged in both languages and ensuring translations are natural and relatable to farmers rather than technical.",
+      "reqIds": [
+        "REQ-63"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-in-the-header-component-frontend-src-components-siteheader-tsx-to-french-including-navigation-link-labels-home-accueil-for-farmers-pour-les-agriculteurs-contact-contact-while-keeping-the-name-morshid-unchanged-in-the-logo-and-ensuring-the-language-switcher-itself-displays-correctly-in-both-languages",
+      "title": "Translate all text content in the header component (frontend/src/components/SiteHeader.tsx) to French, including navigation link labels ('Home' → 'Accueil', 'For Farmers' → 'Pour les Agriculteurs', 'Contact' → 'Contact'), while keeping the name 'MORSHID' unchanged in the logo and ensuring the language switcher itself displays correctly in both languages.",
+      "reqIds": [
+        "REQ-64"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-in-the-footer-component-frontend-src-components-sitefooter-tsx-to-french-including-the-contact-information-line-while-maintaining-the-exact-structure-and-keeping-technical-details-email-phone-number-company-name-unchanged-and-keeping-the-name-morshid-unchanged-in-the-logo",
+      "title": "Translate all text content in the footer component (frontend/src/components/SiteFooter.tsx) to French, including the contact information line while maintaining the exact structure and keeping technical details (email, phone number, company name) unchanged, and keeping the name 'MORSHID' unchanged in the logo.",
+      "reqIds": [
+        "REQ-65"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-in-the-whatsapp-floating-button-component-frontend-src-components-whatsappfloatingbutton-tsx-to-french-including-any-tooltip-or-aria-label-text-while-keeping-the-whatsapp-link-destination-unchanged",
+      "title": "Translate all text content in the WhatsApp floating button component (frontend/src/components/WhatsAppFloatingButton.tsx) to French, including any tooltip or aria-label text, while keeping the WhatsApp link destination unchanged.",
+      "reqIds": [
+        "REQ-66"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-in-the-logopopup-component-frontend-src-components-logopopup-tsx-to-french-including-the-title-with-morshid-and-the-message-text-nothing-to-lose-everything-to-gain-expert-advice-saved-time-better-harvests-higher-profits-while-keeping-the-name-morshid-unchanged-and-ensuring-the-modal-structure-close-button-and-click-outside-to-close-functionality-remain-unchanged",
+      "title": "Translate all text content in the LogoPopup component (frontend/src/components/LogoPopup.tsx) to French, including the title 'With MORSHID' and the message text 'Nothing to lose, everything to gain. Expert advice, saved time, better harvests, higher profits.', while keeping the name 'MORSHID' unchanged and ensuring the modal structure, close button, and click-outside-to-close functionality remain unchanged.",
+      "reqIds": [
+        "REQ-67"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-debug-and-fix-the-runtime-error-occurring-when-using-the-language-switcher-in-the-siteheader-component-frontend-src-components-siteheader-tsx-that-displays-something-went-wrong-to-the-user-ensure-the-en-fr-toggle-button-works-without-errors",
+      "title": "Debug and fix the runtime error occurring when using the language switcher in the SiteHeader component (frontend/src/components/SiteHeader.tsx) that displays 'Something went wrong!' to the user; ensure the EN/FR toggle button works without errors.",
+      "reqIds": [
+        "REQ-72"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-error-boundary-handling-around-the-language-switcher-button-in-siteheader-to-catch-and-log-any-errors-that-occur-during-language-toggle-preventing-the-entire-application-from-crashing-and-providing-a-fallback-ui",
+      "title": "Add error boundary handling around the language switcher button in SiteHeader to catch and log any errors that occur during language toggle, preventing the entire application from crashing and providing a fallback UI.",
+      "reqIds": [
+        "REQ-74"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-languagecontext-provider-and-all-language-switching-functionality-from-the-application-frontend-src-contexts-languagecontext-tsx-to-restore-the-site-to-its-pre-language-switcher-state",
+      "title": "Remove the LanguageContext provider and all language switching functionality from the application (frontend/src/contexts/LanguageContext.tsx) to restore the site to its pre-language-switcher state.",
+      "reqIds": [
+        "REQ-75"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-language-switcher-button-en-fr-toggle-from-the-siteheader-component-frontend-src-components-siteheader-tsx-and-restore-the-header-to-display-only-the-morshid-logo-and-navigation-links-home-for-farmers-contact-with-existing-styling-active-link-highlight-in-25d366-hover-underline-effect",
+      "title": "Remove the language switcher button (EN/FR toggle) from the SiteHeader component (frontend/src/components/SiteHeader.tsx) and restore the header to display only the MORSHID logo and navigation links (Home, For Farmers, Contact) with existing styling (active link highlight in #25D366, hover underline effect).",
+      "reqIds": [
+        "REQ-76"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-all-translated-text-content-across-all-pages-homepage-forfarmerspage-contactpage-and-components-siteheader-sitefooter-whatsappfloatingbutton-logopopup-with-english-only-text-removing-all-calls-to-translation-functions-t-and-restoring-original-english-copy",
+      "title": "Replace all translated text content across all pages (HomePage, ForFarmersPage, ContactPage) and components (SiteHeader, SiteFooter, WhatsAppFloatingButton, LogoPopup) with English-only text, removing all calls to translation functions (t()) and restoring original English copy.",
+      "reqIds": [
+        "REQ-77"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-language-switcher-ui-component-in-the-header-frontend-src-components-siteheader-tsx-displaying-en-fr-text-positioned-near-the-navigation-menu-allowing-users-to-toggle-between-english-and-french-languages-without-changing-the-header-structure-logo-or-existing-navigation-links",
+      "title": "Create a language switcher UI component in the header (frontend/src/components/SiteHeader.tsx) displaying 'EN | FR' text positioned near the navigation menu, allowing users to toggle between English and French languages without changing the header structure, logo, or existing navigation links.",
+      "reqIds": [
+        "REQ-78"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-on-the-home-page-frontend-src-pages-homepage-tsx-to-clear-simple-french-that-farmers-can-easily-understand-including-hero-headline-subtitle-availability-text-section-titles-four-pillars-card-content-how-it-works-step-descriptions-testimonials-stats-text-and-all-cta-button-labels-while-keeping-the-name-morshid-unchanged-in-both-languages",
+      "title": "Translate all text content on the Home page (frontend/src/pages/HomePage.tsx) to clear, simple French that farmers can easily understand, including hero headline, subtitle, availability text, section titles, Four Pillars card content, How It Works step descriptions, testimonials, stats text, and all CTA button labels, while keeping the name 'MORSHID' unchanged in both languages.",
+      "reqIds": [
+        "REQ-80"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-on-the-for-farmers-page-frontend-src-pages-forfarmerspage-tsx-to-clear-simple-french-that-farmers-can-easily-understand-including-hero-title-subtitle-service-card-titles-service-card-descriptions-faq-questions-and-answers-and-cta-section-text-while-keeping-the-name-morshid-unchanged-in-both-languages",
+      "title": "Translate all text content on the For Farmers page (frontend/src/pages/ForFarmersPage.tsx) to clear, simple French that farmers can easily understand, including hero title, subtitle, service card titles, service card descriptions, FAQ questions and answers, and CTA section text, while keeping the name 'MORSHID' unchanged in both languages.",
+      "reqIds": [
+        "REQ-81"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-on-the-contact-page-frontend-src-pages-contactpage-tsx-to-clear-simple-french-that-farmers-can-easily-understand-including-page-title-subtitle-contact-card-titles-contact-card-descriptions-and-response-time-note-while-keeping-the-name-morshid-unchanged-in-both-languages",
+      "title": "Translate all text content on the Contact page (frontend/src/pages/ContactPage.tsx) to clear, simple French that farmers can easily understand, including page title, subtitle, contact card titles, contact card descriptions, and response-time note, while keeping the name 'MORSHID' unchanged in both languages.",
+      "reqIds": [
+        "REQ-82"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-in-the-header-component-frontend-src-components-siteheader-tsx-including-navigation-link-labels-home-accueil-for-farmers-pour-les-agriculteurs-contact-contact-while-keeping-the-name-morshid-unchanged-in-the-logo",
+      "title": "Translate all text content in the header component (frontend/src/components/SiteHeader.tsx) including navigation link labels ('Home' → 'Accueil', 'For Farmers' → 'Pour les Agriculteurs', 'Contact' → 'Contact'), while keeping the name 'MORSHID' unchanged in the logo.",
+      "reqIds": [
+        "REQ-83"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-in-the-whatsapp-floating-button-component-frontend-src-components-whatsappfloatingbutton-tsx-including-any-tooltip-or-aria-label-text-while-keeping-the-whatsapp-link-destination-unchanged",
+      "title": "Translate all text content in the WhatsApp floating button component (frontend/src/components/WhatsAppFloatingButton.tsx) including any tooltip or aria-label text, while keeping the WhatsApp link destination unchanged.",
+      "reqIds": [
+        "REQ-85"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-translate-all-text-content-in-the-logopopup-component-frontend-src-components-logopopup-tsx-including-the-title-with-morshid-and-the-message-text-nothing-to-lose-everything-to-gain-expert-advice-saved-time-better-harvests-higher-profits-while-keeping-the-name-morshid-unchanged-and-ensuring-the-modal-structure-close-button-and-click-outside-to-close-functionality-remain-unchanged",
+      "title": "Translate all text content in the LogoPopup component (frontend/src/components/LogoPopup.tsx) including the title 'With MORSHID' and the message text 'Nothing to lose, everything to gain. Expert advice, saved time, better harvests, higher profits.', while keeping the name 'MORSHID' unchanged and ensuring the modal structure, close button, and click-outside-to-close functionality remain unchanged.",
+      "reqIds": [
+        "REQ-86"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -624,6 +793,20 @@
       "id": "AR-31",
       "summary": "Home page: Add 2 new YouTube videos (https://www.youtube.com/watch?v=15sPMyEQtbk and https://www.youtube.com/watch?v=lbUlArhso58) to the \"See MORSHID in Action\" videos section alongside existing videos; ensure all videos are the same size and aligned; do not change anything else",
       "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-36",
+      "summary": "Add a language switcher in the header showing \"EN | FR\" that toggles between English and French; keep \"MORSHID\" unchanged in both languages; translate all content to simple French farmers can understand; do not change anything else",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-43",
+      "summary": "Translate all text content in the footer component (frontend/src/components/SiteFooter.tsx) to French while maintaining the exact structure and keeping technical details (email, phone number, company name) unchanged, and keeping the name 'MORSHID' unchanged in the logo.",
+      "reqIds": [
+        "REQ-84"
+      ],
       "status": "pending"
     }
   ],

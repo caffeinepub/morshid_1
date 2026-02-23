@@ -1,13 +1,15 @@
 import { Link, useRouterState } from '@tanstack/react-router';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function SiteHeader() {
   const router = useRouterState();
   const currentPath = router.location.pathname;
+  const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { label: 'Home', path: '/' },
-    { label: 'For Farmers', path: '/for-farmers' },
-    { label: 'Contact', path: '/contact' },
+    { label: t('nav.home'), path: '/' },
+    { label: t('nav.forFarmers'), path: '/for-farmers' },
+    { label: t('nav.contact'), path: '/contact' },
   ];
 
   return (
@@ -20,19 +22,40 @@ export default function SiteHeader() {
             className="h-10 w-auto"
           />
         </Link>
-        <nav className="flex items-center gap-3">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`text-lg font-bold transition-colors hover:text-[#25D366] hover:underline hover:underline-offset-4 ${
-                currentPath === link.path ? 'text-[#25D366]' : 'text-morshid-text'
+        <div className="flex items-center gap-6">
+          <nav className="flex items-center gap-3">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-lg font-bold transition-colors hover:text-[#25D366] hover:underline hover:underline-offset-4 ${
+                  currentPath === link.path ? 'text-[#25D366]' : 'text-morshid-text'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex items-center gap-2 text-lg font-bold">
+            <button
+              onClick={() => setLanguage('en')}
+              className={`transition-colors hover:text-[#25D366] ${
+                language === 'en' ? 'text-[#25D366]' : 'text-morshid-text'
               }`}
             >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+              EN
+            </button>
+            <span className="text-gray-400">|</span>
+            <button
+              onClick={() => setLanguage('fr')}
+              className={`transition-colors hover:text-[#25D366] ${
+                language === 'fr' ? 'text-[#25D366]' : 'text-morshid-text'
+              }`}
+            >
+              FR
+            </button>
+          </div>
+        </div>
       </div>
     </header>
   );

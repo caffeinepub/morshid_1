@@ -1,11 +1,18 @@
 # Specification
 
 ## Summary
-**Goal:** Tighten navigation spacing and expand video showcase with two additional YouTube videos.
+**Goal:** Add bilingual French support with a language switcher, allowing farmers to view the entire MORSHID website in either English or French.
 
 **Planned changes:**
-- Reduce horizontal spacing between navigation links (Home, For Farmers, Contact) in the site header
-- Add two new YouTube video embeds (15sPMyEQtbk and lbUlArhso58) to the "See MORSHID in Action" section
-- Ensure all videos in the section have identical dimensions and consistent alignment
+- Add language switcher ("EN | FR") in the header near navigation menu
+- Implement language state management using React context to track selected language (default: English)
+- Translate all text content on Home page to simple, farmer-friendly French
+- Translate all text content on For Farmers page to simple, farmer-friendly French
+- Translate all text content on Contact page to simple, farmer-friendly French
+- Translate header navigation links to French ("Home" → "Accueil", "For Farmers" → "Pour les Agriculteurs", "Contact" → "Contact")
+- Translate footer content to French while keeping technical details unchanged
+- Translate WhatsApp floating button tooltip/aria-label to French
+- Translate LogoPopup component text to French
+- Keep "MORSHID" name unchanged in both languages throughout the site
 
-**User-visible outcome:** Navigation menu appears more compact with links closer together, and the video section showcases four videos instead of two, all uniformly sized and aligned.
+**User-visible outcome:** Farmers can click "FR" in the header to view the entire website in simple French, or click "EN" to switch back to English. All content including navigation, pages, buttons, and components will display in the selected language, making the site accessible to French-speaking farmers.

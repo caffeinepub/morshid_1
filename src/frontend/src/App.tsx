@@ -1,8 +1,13 @@
 import { RouterProvider, createRouter, createRoute, createRootRoute } from '@tanstack/react-router';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { InternetIdentityProvider } from './hooks/useInternetIdentity';
+import { LanguageProvider } from './contexts/LanguageContext';
 import SiteLayout from './layouts/SiteLayout';
 import HomePage from './pages/HomePage';
 import ForFarmersPage from './pages/ForFarmersPage';
 import ContactPage from './pages/ContactPage';
+
+const queryClient = new QueryClient();
 
 const rootRoute = createRootRoute({
   component: SiteLayout,
@@ -37,5 +42,13 @@ declare module '@tanstack/react-router' {
 }
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <InternetIdentityProvider>
+        <LanguageProvider>
+          <RouterProvider router={router} />
+        </LanguageProvider>
+      </InternetIdentityProvider>
+    </QueryClientProvider>
+  );
 }

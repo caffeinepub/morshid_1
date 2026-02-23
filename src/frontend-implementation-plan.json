@@ -1,41 +1,163 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Reduce navigation spacing and add two new videos to Home page",
+  "title": "Add bilingual French support with language switcher",
   "requirements": [
     {
-      "id": "REQ-57",
-      "summary": "Reduce horizontal spacing between navigation links in SiteHeader to make them appear closer together",
+      "id": "REQ-78",
+      "summary": "Create language switcher UI component in header displaying 'EN | FR' text",
       "acceptanceCriteria": [
-        "Navigation links (Home, For Farmers, Contact) have reduced horizontal spacing between them",
-        "Links appear visibly closer together compared to current layout",
-        "All existing navigation functionality remains unchanged (active highlighting, hover effects, routing)",
-        "Header logo, structure, and sticky behavior remain unchanged"
+        "Language switcher displays 'EN | FR' text in the header",
+        "Switcher is positioned near navigation menu and easily visible",
+        "Clicking 'EN' switches to English language",
+        "Clicking 'FR' switches to French language",
+        "Header structure, logo, and navigation links remain unchanged"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/SiteHeader.tsx",
           "operation": "modify",
-          "description": "Reduce the horizontal gap between navigation links in the nav element by decreasing the gap utility class (currently gap-8) to a smaller value such as gap-3 or gap-4, ensuring links remain readable and functional while appearing closer together"
+          "description": "Add language switcher UI component displaying 'EN | FR' text positioned near the navigation menu, integrating with language context to toggle between English and French, without changing the header structure, logo, or navigation links"
         }
       ]
     },
     {
-      "id": "REQ-58",
-      "summary": "Add two new YouTube videos to the HomePage videos section and ensure all videos are the same size and aligned",
+      "id": "REQ-79",
+      "summary": "Implement language state management using React context to track selected language",
       "acceptanceCriteria": [
-        "Two new YouTube videos (15sPMyEQtbk and lbUlArhso58) are embedded in the \"See MORSHID in Action\" section",
-        "All videos in the section (existing + new) have identical dimensions",
-        "All videos are visually aligned with consistent spacing",
-        "Videos are responsive and maintain alignment on different screen sizes",
-        "Section title and any surrounding content remain unchanged",
-        "No other page sections are modified"
+        "Language state is managed via React context or state hooks",
+        "Current language (English or French) is accessible to all components",
+        "Default language is English on initial page load",
+        "Language selection persists across page navigation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/contexts/LanguageContext.tsx",
+          "operation": "create",
+          "description": "Create React context providing language state ('en' or 'fr'), toggle function, and translation lookup function, with default language set to English and all translations for the entire application stored in a structured object"
+        },
+        {
+          "path": "frontend/src/layouts/SiteLayout.tsx",
+          "operation": "modify",
+          "description": "Wrap the layout content with LanguageProvider to make language state accessible to all components throughout the application"
+        }
+      ]
+    },
+    {
+      "id": "REQ-80",
+      "summary": "Translate all Home page text content to simple French while keeping 'MORSHID' unchanged",
+      "acceptanceCriteria": [
+        "All Home page text is translated to simple, farmer-friendly French",
+        "The name 'MORSHID' remains unchanged in both languages",
+        "French translations are natural and easy for farmers to understand",
+        "All hero text, card content, testimonials, stats, and buttons are translated"
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/HomePage.tsx",
           "operation": "modify",
-          "description": "Add two new YouTube video embeds (https://www.youtube.com/watch?v=15sPMyEQtbk and https://www.youtube.com/watch?v=lbUlArhso58) to the existing videos section, ensure all video iframes use consistent width and height attributes or CSS classes for uniform sizing, and apply consistent spacing between all videos using a grid or flexbox layout with equal gaps"
+          "description": "Replace all hardcoded text strings with translation function calls using the language context, covering hero headline, subtitle, availability text, Four Pillars card titles and descriptions, How It Works step descriptions, testimonials, stats text, YouTube section, and CTA button labels, while keeping 'MORSHID' unchanged"
+        }
+      ]
+    },
+    {
+      "id": "REQ-81",
+      "summary": "Translate all For Farmers page text content to simple French while keeping 'MORSHID' unchanged",
+      "acceptanceCriteria": [
+        "All For Farmers page text is translated to simple, farmer-friendly French",
+        "The name 'MORSHID' remains unchanged in both languages",
+        "Service cards, FAQ content, and CTA text are translated",
+        "French translations are natural and relatable to farmers"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ForFarmersPage.tsx",
+          "operation": "modify",
+          "description": "Replace all hardcoded text strings with translation function calls using the language context, covering hero title, subtitle, all four service card titles and descriptions, FAQ questions and answers, and CTA section text, while keeping 'MORSHID' unchanged"
+        }
+      ]
+    },
+    {
+      "id": "REQ-82",
+      "summary": "Translate all Contact page text content to simple French while keeping 'MORSHID' unchanged",
+      "acceptanceCriteria": [
+        "All Contact page text is translated to simple, farmer-friendly French",
+        "The name 'MORSHID' remains unchanged in both languages",
+        "Page title, subtitle, contact cards, and response-time note are translated",
+        "French translations are clear and easy for farmers to understand"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Replace all hardcoded text strings with translation function calls using the language context, covering page title, subtitle, all three contact card titles and descriptions (WhatsApp, Email, Phone), and response-time note, while keeping 'MORSHID' unchanged"
+        }
+      ]
+    },
+    {
+      "id": "REQ-83",
+      "summary": "Translate header navigation link labels to French while keeping 'MORSHID' logo unchanged",
+      "acceptanceCriteria": [
+        "Navigation links display in French when French is selected",
+        "Home becomes 'Accueil', For Farmers becomes 'Pour les Agriculteurs', Contact remains 'Contact'",
+        "The MORSHID logo text remains unchanged in both languages",
+        "Language switcher displays correctly in both languages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Replace hardcoded navigation link labels with translation function calls ('Home' → 'Accueil', 'For Farmers' → 'Pour les Agriculteurs', 'Contact' → 'Contact'), while keeping the MORSHID logo text unchanged in both languages"
+        }
+      ]
+    },
+    {
+      "id": "REQ-84",
+      "summary": "Translate footer component text to French while keeping technical details and 'MORSHID' unchanged",
+      "acceptanceCriteria": [
+        "Footer text displays in French when French is selected",
+        "Technical details (email, phone, company name) remain unchanged",
+        "The MORSHID logo in footer remains unchanged",
+        "Footer structure and layout remain unchanged"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Replace translatable text strings with translation function calls while keeping technical details (email, phone number, TMU SARL company name) and the MORSHID logo unchanged, maintaining exact footer structure"
+        }
+      ]
+    },
+    {
+      "id": "REQ-85",
+      "summary": "Translate WhatsApp floating button tooltip/aria-label text while keeping link unchanged",
+      "acceptanceCriteria": [
+        "WhatsApp button tooltip/aria-label displays in French when French is selected",
+        "WhatsApp link destination (https://wa.me/212623237732) remains unchanged",
+        "Button functionality and positioning remain unchanged"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/WhatsAppFloatingButton.tsx",
+          "operation": "modify",
+          "description": "Replace any tooltip or aria-label text with translation function calls while keeping the WhatsApp link destination unchanged and maintaining button functionality and positioning"
+        }
+      ]
+    },
+    {
+      "id": "REQ-86",
+      "summary": "Translate LogoPopup modal text to French while keeping 'MORSHID' unchanged",
+      "acceptanceCriteria": [
+        "Popup title and message display in French when French is selected",
+        "The name 'MORSHID' in the title remains unchanged",
+        "Modal structure, close button, and functionality remain unchanged",
+        "French translation is simple and farmer-friendly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/LogoPopup.tsx",
+          "operation": "modify",
+          "description": "Replace the title 'With MORSHID' and message text with translation function calls, keeping 'MORSHID' unchanged and maintaining modal structure, close button, and click-outside-to-close functionality"
         }
       ]
     }
